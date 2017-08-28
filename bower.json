@@ -1,0 +1,21 @@
+{
+  "name": "kessinger",
+  "description": "kessinger",
+  "main": "",
+  "directory": "public/",
+  "authors": [
+    "Guilherme Valdevieso <gsvaldevieso@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
