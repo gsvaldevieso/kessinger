@@ -52,6 +52,7 @@
                             <li><a href="{{ route('login') }}">Entrar</a></li>
                             <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
                         @else
+                            <li><a href="/perfil">Perfil</a></li>
                             <li><a href="/publicacoes">Publicações</a></li>
                             <li><a href="/periodicos">Periódicos</a></li>
                             <li class="dropdown">

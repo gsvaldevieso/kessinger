@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Profile;
 
 class RegisterController extends Controller
 {
@@ -62,10 +63,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $novoUsuario = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $novoPerfil = new Profile();
+        $novoPerfil->{'user_id'} = $novoUsuario->id;
+        $novoPerfil->{'full_name'} = $novoUsuario->name;
+        $novoPerfil->save();
+
+        return $novoUsuario;
     }
 }

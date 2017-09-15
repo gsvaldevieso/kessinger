@@ -15,13 +15,13 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->string('full_name', 200);
-            $table->string('address', 100);
-            $table->string('cep', 10);
-            $table->string('grade', 100);
-            $table->string('area', 100);
-            $table->integer('address_number');
-            $table->string('cpf', 20);
-            $table->string('nacionalidade');
+            $table->string('address', 100)->nullable();;
+            $table->integer('address_number')->nullable();;
+            $table->string('cep', 10)->nullable();;
+            $table->string('grade', 100)->nullable();;
+            $table->string('area', 100)->nullable();;
+            $table->string('cpf', 20)->nullable();;
+            $table->string('nacionalidade')->nullable();;
             $table->integer('user_id');
             $table->foreign('user_id')
                   ->references('id')->on('users')

@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::resource('authors', 'AuthorsController');
+Route::resource('perfil', 'PerfilController');
 Route::get('/publicacoes', 'PublicacoesController@index');
 Route::get('/filtro', 'FiltroController@index')->name('filtro');
 Route::resource('publicacoes', 'PublicacoesController');
