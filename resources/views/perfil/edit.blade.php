@@ -18,31 +18,31 @@
                     <tbody>
                     	<tr>
                     		<td>Endereço:</td>
-                    		<td><input class="form-control" type="text" name="address"></td>
+                    		<td><input class="form-control" value="{{ $perfil->address }}" type="text" name="address"></td>
                     	</tr>
 						<tr>
 							<td>Número:</td>
-							<td><input class="form-control" type="text" name="address_number"></td>
+							<td><input class="form-control" value="{{ $perfil->address_number }}" type="text" name="address_number"></td>
 						</tr>							
 						<tr>
 							<td>CEP:</td>
-							<td><input class="form-control" type="text" name="cep"></td>
+							<td><input class="form-control" value="{{ $perfil->cep }}" type="text" name="cep"></td>
 						</tr>
 						<tr>
 							<td>Título:</td>
-							<td><input class="form-control" type="text" name="grade"></td>
+							<td><input class="form-control" value="{{ $perfil->grade }}" type="text" name="grade"></td>
 						</tr>
 						<tr>
 							<td>Área de estudo:</td>
-							<td><input class="form-control" type="text" name="area"></td>
+							<td><input class="form-control" value="{{ $perfil->area }}" type="text" name="area"></td>
 						</tr>
 						<tr>
 							<td>CPF:</td>
-							<td><input class="form-control" type="text" name="cpf"></td>
+							<td><input class="form-control" value="{{ $perfil->cpf }}" type="text" name="cpf"></td>
 						</tr>
 						<tr>
 							<td>Nacionalidade:</td>
-							<td><input class="form-control" type="text" name="nacionalidade"></td>
+							<td><input class="form-control" value="{{ $perfil->nacionalidade }}" type="text" name="nacionalidade"></td>
 						</tr>                     
                     </tbody>
                   </table>
