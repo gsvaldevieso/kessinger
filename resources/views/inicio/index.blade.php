@@ -4,7 +4,9 @@
 	<div class="row">
 		<form action="/publicacoes" method="GET">
 			<div class="col-md-12 text-center">
-				<h1>Kessinger</h1>	
+				<div class="text-center bg-info transparent">
+                    <img class="animated infinite pulse" src="{{ asset('img/prototipo4.png') }}" height="133" width="580"/>
+                </div>
 				<div class="input-group input-group-lg">
 				  <input name="pesquisar" type="text" class="form-control" placeholder="Digite o que você procura aqui.." aria-describedby="sizing-addon1">
 				  <span class="input-group-btn">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Profile;
 use Auth;
+use Image;
 
 class PerfilController extends Controller
 {
@@ -73,6 +74,8 @@ class PerfilController extends Controller
     public function update(Request $request, $id)
     {
         $perfil = Profile::find($id);
+        $perfil->info = $request->input('info');
+        $perfil->birthDate = $request->input('birthDate');
         $perfil->address = $request->input('address');
         $perfil->{'address_number'} = $request->input('address_number');
         $perfil->cep = $request->input('cep');

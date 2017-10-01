@@ -17,11 +17,19 @@
    <script
   src="{{ asset('js/jquery-3.2.1.min.js') }}"></script> 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/picker.date.js') }}"></script>
+    <script src="{{ asset('js/pt_BR.js') }}"></script>
     <script src="{{ asset('js/materialize.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+          integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+          crossorigin="anonymous"/>
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top yellow lighten-4">
             <div class="container">
                 <div class="navbar-header">
 
@@ -35,7 +43,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Kessinger') }}
+                        <span><img style="width:197px;height:45px;" src="/img/prototipo4.png"/>Home</span>
                     </a>
                 </div>
 
