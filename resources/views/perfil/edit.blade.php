@@ -16,16 +16,16 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                	<div class="col-md-3 col-lg-3 " align="center">                 		
+                	<div class="col-md-3 col-lg-3 " align="center">
                 		<div id="thumbnail">
-                			<img alt="User Pic" name="user-current-img" src="{{ $picture }}" class="img-circle img-responsive">
+                			<img alt="User Pic" name="user-current-img" src="{{ Auth::user()->picture() }}" class="img-circle img-responsive">
                 		</div>
 			                	<div class="file-field input-field">
 				      				<div class="btn">
 								        <span>Selecionar Imagem</span>
 								        <input type="file" id="picture" name="picture">
 				      				</div>
-			    				</div> 
+			    				</div>
     			 	</div>
                 <div class=" col-md-9 col-lg-9 ">
                 <span>Sobre mim</span>
@@ -35,7 +35,7 @@
 					          <textarea id="textarea1" class="materialize-textarea form-control" type="text" name="info">{{ $perfil->info }}</textarea>
 					        </div>
       					</div>
-  				</div> 
+  				</div>
                   <table class="table striped table-user-information">
                     <tbody>
                     	<tr>
@@ -49,7 +49,7 @@
 						<tr>
 							<td>Número:</td>
 							<td><input class="form-control" value="{{ $perfil->address_number }}" type="text" name="address_number"></td>
-						</tr>							
+						</tr>
 						<tr>
 							<td>CEP:</td>
 							<td><input class="form-control" value="{{ $perfil->cep }}" type="text" name="cep"></td>
@@ -69,7 +69,7 @@
 						<tr>
 							<td>Nacionalidade:</td>
 							<td><input class="form-control" value="{{ $perfil->nacionalidade }}" type="text" name="nacionalidade"></td>
-						</tr>                     
+						</tr>
                     </tbody>
                   </table>
                 </div>
@@ -82,7 +82,7 @@
           </div>
         </div>
 		</form>
-	</div>	
+	</div>
 </div>
 <script>
 	$(document).ready(function () {
@@ -96,7 +96,7 @@
         jQuery(function($){
 			var fileDiv = document.getElementById("picture");
 			var fileInput = document.getElementById("picture");
-		
+
 			fileInput.addEventListener("change",function(e){
 			  var files = this.files
 			  showThumbnail(files)
@@ -165,4 +165,4 @@
 <script>particlesJS.load('particles-js', '/config/package.json', function() {});</script>
 
 </body>
-@stop 
+@stop

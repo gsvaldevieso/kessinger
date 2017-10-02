@@ -12,10 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" /> 
+    <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" />
      <link href="{{ asset('css/icon.css')}}" rel="stylesheet">
    <script
-  src="{{ asset('js/jquery-3.2.1.min.js') }}"></script> 
+  src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/picker.date.js') }}"></script>
     <script src="{{ asset('js/pt_BR.js') }}"></script>
@@ -65,7 +65,7 @@
                             <li><a href="/periodicos">Periódicos</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img style="width:32px;height:32px;" src="{{ $picture }}"/>
+                                    <img style="width:32px;height:32px;" src="{{ Auth::user()->picture() }}"/>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

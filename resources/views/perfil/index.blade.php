@@ -14,7 +14,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                	<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ $picture }}" class="img-circle img-responsive"> </div>
+                	<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ Auth::user()->picture() }}" class="img-circle img-responsive"> </div>
                 <div class=" col-md-9 col-lg-9 ">
                 <span><h3>Sobre mim</h3></span>
       					<div class="row">
@@ -22,7 +22,7 @@
 					          <textarea readonly id="textarea1" class="materialize-textarea">{{ $perfil->info }}</textarea>
 					        </div>
       					</div>
-  				</div> 
+  				</div>
   				<span><h3>Informações pessoais</h3></span>
                   <table class="table highlight table-user-information">
                     <tbody>
@@ -37,7 +37,7 @@
 						<tr>
 							<td>Número:</td>
 							<td>{{ $perfil->address_number }}</td>
-						</tr>							
+						</tr>
 						<tr>
 							<td>CEP:</td>
 							<td>{{ $perfil->cep }}</td>
@@ -57,7 +57,7 @@
 						<tr>
 							<td>Nacionalidade:</td>
 							<td>{{ $perfil->nacionalidade }}</td>
-						</tr>                     
+						</tr>
                     </tbody>
                   </table>
                 </div>
@@ -70,7 +70,7 @@
           </div>
         </div>
 		</form>
-	</div>	
+	</div>
 </div>
 </div>
 
@@ -78,4 +78,4 @@
 <script>particlesJS.load('particles-js', '/config/package.json', function() {});</script>
 
 </body>
-@stop 
+@stop

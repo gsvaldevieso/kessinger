@@ -2,111 +2,101 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Profile;
 use Auth;
-use Image;
+use Illuminate\Http\Request;
 
-class PerfilController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
-        
-        return view('perfil.index')->with('perfil', $usuarioAtual);
-    }
+class PerfilController extends Controller {
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index() {
+		$usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+		return view('perfil.index')->with('perfil', $usuarioAtual);
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create() {
+		//
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request) {
+		//
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
-        return view('perfil.edit')->with('perfil', $usuarioAtual);
-    }
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id) {
+		//
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id) {
+		$usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
+		return view('perfil.edit')->with('perfil', $usuarioAtual);
+	}
 
-        $perfil = Profile::find($id);
-        $perfil->info = $request->input('info');
-        $perfil->birthDate = $request->input('birthDate');
-        $perfil->address = $request->input('address');
-        $perfil->{'address_number'} = $request->input('address_number');
-        $perfil->cep = $request->input('cep');
-        $perfil->grade = $request->input('grade');
-        $perfil->area = $request->input('area');
-        $perfil->cpf = $request->input('cpf');
-        $perfil->nacionalidade = $request->input('nacionalidade');
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id) {
 
-        /* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
-        if ($request->hasFile('picture') && $request->file('picture')->isValid()) {
-            $userPicture = $request->file('picture');
-            $path = $userPicture->storeAs('public/'.md5(time()).'.jpg', $request->input('picture'));
-            $perfil->profilePic = $path;
-        }
+		$perfil                     = Profile::find($id);
+		$perfil->info               = $request->input('info');
+		$perfil->birthDate          = $request->input('birthDate');
+		$perfil->address            = $request->input('address');
+		$perfil->{'address_number'} = $request->input('address_number');
+		$perfil->cep                = $request->input('cep');
+		$perfil->grade              = $request->input('grade');
+		$perfil->area               = $request->input('area');
+		$perfil->cpf                = $request->input('cpf');
+		$perfil->nacionalidade      = $request->input('nacionalidade');
 
-        $perfil->save();
+		/* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
+		if ($request->hasFile('picture') && $request->file('picture')->isValid()) {
+			$userPicture        = $request->file('picture');
+			$path               = $userPicture->storeAs('public/'.md5(time()).'.jpg', $request->input('picture'));
+			$perfil->profilePic = $path;
+		}
 
-        return redirect('/perfil');
-    }
+		$perfil->save();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+		return redirect('/perfil');
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id) {
+		//
+	}
 }

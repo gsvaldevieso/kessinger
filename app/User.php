@@ -2,28 +2,41 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use App\Profile;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-    use Notifiable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+class User extends Authenticatable {
+	use Notifiable;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+		'name', 'email', 'password'
+	];
+
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [
+		'password', 'remember_token',
+	];
+
+	public function picture() {
+		$usuarioAtual = Profile::where('user_id', \Auth::user()->id)->first();
+
+		if (!$usuarioAtual) {
+			return '/storage/default.png';
+		}
+
+		$userPicture = Storage::url($usuarioAtual->profilePic);
+		return $userPicture;
+	}
 }
