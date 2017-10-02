@@ -14,10 +14,9 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                	<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="/img/no-user-image.gif" class="img-circle img-responsive"> </div>
+                	<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ $picture }}" class="img-circle img-responsive"> </div>
                 <div class=" col-md-9 col-lg-9 ">
                 <span><h3>Sobre mim</h3></span>
-                <div class="row">
       					<div class="row">
 					        <div class="input-field col s12">
 					          <textarea readonly id="textarea1" class="materialize-textarea">{{ $perfil->info }}</textarea>

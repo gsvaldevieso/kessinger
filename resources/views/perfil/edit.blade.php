@@ -6,7 +6,7 @@
 
 <div id="editaPerfil" class="container">
 	<div class="row">
-		<form action="/perfil/{{ $perfil->id }}" method="POST">
+		<form action="/perfil/{{ $perfil->id }}" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<input type="hidden" name="_method" value="PUT">
         <div class="col-md-12 toppad" >
@@ -16,19 +16,16 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                	<div class="col-md-3 col-lg-3 " align="center"> 
-                		<img alt="User Pic" src="/img/{{ $perfil->avatar }}" class="img-circle img-responsive">
-		                <form action="/perfil/{{ $perfil->id }}" method="POST" enctype="multipart/form-data">
+                	<div class="col-md-3 col-lg-3 " align="center">                 		
+                		<div id="thumbnail">
+                			<img alt="User Pic" name="user-current-img" src="{{ $picture }}" class="img-circle img-responsive">
+                		</div>
 			                	<div class="file-field input-field">
 				      				<div class="btn">
 								        <span>Selecionar Imagem</span>
-								        <input type="file" name="file">
+								        <input type="file" id="picture" name="picture">
 				      				</div>
-			    				</div>
-		    				<h5 style="color: white">AAAAAAAAAA</h5>
-		    				<input class="btn text-center" type="submit" name="enviar" value="Enviar">
-							<input type="hidden" value="{{ csrf_token() }}" name="_token">
-		    			</form>
+			    				</div> 
     			 	</div>
                 <div class=" col-md-9 col-lg-9 ">
                 <span>Sobre mim</span>
@@ -90,6 +87,52 @@
 <script>
 	$(document).ready(function () {
         $('#cpf').mask('000.000.000-00');
+
+
+
+
+
+
+        jQuery(function($){
+			var fileDiv = document.getElementById("picture");
+			var fileInput = document.getElementById("picture");
+		
+			fileInput.addEventListener("change",function(e){
+			  var files = this.files
+			  showThumbnail(files)
+			},false)
+
+			function showThumbnail(files){
+			  for(var i=0;i<files.length;i++){
+			    var file = files[i]
+			    var imageType = /image.*/
+			    if(!file.type.match(imageType)){
+			      console.log("Not an Image");
+			      continue;
+			    }
+
+			    var image = document.createElement("img");
+			    var thumbnail = $("#thumbnail");
+			    image.file = file;
+			    image.classList.add('img-circle');
+			    image.classList.add('img-responsive');
+			    thumbnail.html(image);
+
+			    var reader = new FileReader()
+			    reader.onload = (function(aImg){
+			      return function(e){
+			        aImg.src = e.target.result;
+			      };
+			    }(image))
+			    var ret = reader.readAsDataURL(file);
+			    var canvas = document.createElement("canvas");
+			    ctx = canvas.getContext("2d");
+			    image.onload= function(){
+			      ctx.drawImage(image,100,100)
+			    }
+			  }
+			}
+          });
     });
 
 	var d = new Date();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Profile;
 use Auth;
 use Image;
@@ -17,6 +18,7 @@ class PerfilController extends Controller
     public function index()
     {
         $usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
+        
         return view('perfil.index')->with('perfil', $usuarioAtual);
     }
 
@@ -73,6 +75,7 @@ class PerfilController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $perfil = Profile::find($id);
         $perfil->info = $request->input('info');
         $perfil->birthDate = $request->input('birthDate');
@@ -83,6 +86,14 @@ class PerfilController extends Controller
         $perfil->area = $request->input('area');
         $perfil->cpf = $request->input('cpf');
         $perfil->nacionalidade = $request->input('nacionalidade');
+
+        /* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
+        if ($request->hasFile('picture') && $request->file('picture')->isValid()) {
+            $userPicture = $request->file('picture');
+            $path = $userPicture->storeAs('public/'.md5(time()).'.jpg', $request->input('picture'));
+            $perfil->profilePic = $path;
+        }
+
         $perfil->save();
 
         return redirect('/perfil');
