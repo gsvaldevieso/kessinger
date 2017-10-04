@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Profile;
+use Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Notifications\Notifiable;
@@ -39,4 +40,16 @@ class User extends Authenticatable {
 		$userPicture = Storage::url($usuarioAtual->profilePic);
 		return $userPicture;
 	}
+
+	public function inactivate() {
+		$usuarioAtual         = User::where('id', Auth::user()->id)->first();
+		$usuarioAtual->active = false;
+		$usuarioAtual->save();
+	}
+
+    public function activate() {
+        $usuarioAtual         = User::where('id', Auth::user()->id)->first();
+        $usuarioAtual->active = true;
+        $usuarioAtual->save();
+    }
 }
