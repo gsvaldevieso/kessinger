@@ -38,6 +38,27 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="data_nascimento" class="col-md-4 control-label">Data de nascimento</label>
+                            <div class="col-md-6">
+                                <input id="data_nascimento" type="date" class="form-control" name="data_nascimento" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpf" class="col-md-4 control-label">CPF</label>
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control" name="cpf" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nacionalidade" class="col-md-4 control-label">Nacionalidade</label>
+                            <div class="col-md-6">
+                                <input id="nacionalidade" type="text" class="form-control" name="nacionalidade" required>
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Senha</label>
 
@@ -54,11 +75,12 @@
 
                         <div class="form-group">
                             <label for="password-confirm" class="col-md-4 control-label">Confirmar senha</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+             
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
