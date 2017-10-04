@@ -14,7 +14,7 @@ class AddFieldProfilePicInProfiles extends Migration
     public function up()
     {
         Schema::table('profiles', function(Blueprint $table) {
-        $table->string('profilePic')->default('default.jpg');
+        $table->string('profilePic')->default('default.png');
         });
     }
 
