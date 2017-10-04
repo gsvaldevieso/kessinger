@@ -15,7 +15,7 @@
             <div class="panel-body">
               <div class="row">
                 	<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ Auth::user()->picture() }}" class="img-circle img-responsive"> </div>
-                <div class=" col-md-9 col-lg-9 ">
+          <div class=" col-md-9 col-lg-9 ">
                 <span><h3>Sobre mim</h3></span>
       					<div class="row">
 					        <div class="input-field col s12">
@@ -23,43 +23,47 @@
 					        </div>
       					</div>
   				</div>
-  				<span><h3>Informações pessoais</h3></span>
-                  <table class="table highlight table-user-information">
+          <div class="col-lg-offset-3 col-md-9 col-lg-9">
+          <h3>Informações pessoais</h3>
+            <table class="table highlight table-user-information">
                     <tbody>
-                    	<tr>
-                    		<td>Data de nascimento:</td>
-                    		<td>{{ $perfil->birthDate }}</td>
-                    	</tr>
-                    	<tr>
-                    		<td>Endereço:</td>
-                    		<td>{{ $perfil->address }}</td>
-                    	</tr>
-						<tr>
-							<td>Número:</td>
-							<td>{{ $perfil->address_number }}</td>
-						</tr>
-						<tr>
-							<td>CEP:</td>
-							<td>{{ $perfil->cep }}</td>
-						</tr>
-						<tr>
-							<td>Titulação:</td>
-							<td>{{ $perfil->grade }}</td>
-						</tr>
-						<tr>
-							<td>Área(s) de estudo(s):</td>
-							<td>{{ $perfil->area }}</td>
-						</tr>
-						<tr>
-							<td>CPF:</td>
-							<td>{{ $perfil->cpf }}</td>
-						</tr>
-						<tr>
-							<td>Nacionalidade:</td>
-							<td>{{ $perfil->nacionalidade }}</td>
-						</tr>
+                      <tr>
+                        <td>Data de nascimento:</td>
+                        <td>{{ $perfil->birthDate }}</td>
+                      </tr>
+                      <tr>
+                        <td>Endereço:</td>
+                        <td>{{ $perfil->address }}</td>
+                      </tr>
+            <tr>
+              <td>Número:</td>
+              <td>{{ $perfil->address_number }}</td>
+            </tr>
+            <tr>
+              <td>CEP:</td>
+              <td>{{ $perfil->cep }}</td>
+            </tr>
+            <tr>
+              <td>Titulação:</td>
+              <td>{{ $perfil->grade }}</td>
+            </tr>
+            <tr>
+              <td>Área(s) de estudo(s):</td>
+              <td>{{ $perfil->area }}</td>
+            </tr>
+            <tr>
+              <td>CPF:</td>
+              <td>{{ $perfil->cpf }}</td>
+            </tr>
+            <tr>
+              <td>Nacionalidade:</td>
+              <td>{{ $perfil->nacionalidade }}</td>
+            </tr>
                     </tbody>
                   </table>
+          </div>
+  				
+                  
                 </div>
               </div>
             </div>
