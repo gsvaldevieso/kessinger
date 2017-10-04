@@ -52,6 +52,9 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'cpf' => 'required|confirmed',
+            'birthDate' => 'required|confirmed',
+            'nacionalidade' => 'required|confirmed'
         ]);
     }
 
@@ -72,6 +75,9 @@ class RegisterController extends Controller
         $novoPerfil = new Profile();
         $novoPerfil->{'user_id'} = $novoUsuario->id;
         $novoPerfil->{'full_name'} = $novoUsuario->name;
+        $novoPerfil->{'cpf'} = $data['cpf'];
+        $novoPerfil->{'birthDate'} = $data['data_nascimento'];
+        $novoPerfil->{'nacionalidade'} = $data['nacionalidade'];
         $novoPerfil->save();
 
         return $novoUsuario;
