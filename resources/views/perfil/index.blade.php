@@ -65,12 +65,13 @@
   				
                   
                 </div>
-              </div>
-            </div>
-                 <div class="panel-footer">
+                                 <div class="panel-footer">
                     <a href="/perfil/{{ $perfil->id }}/edit" type="button" class="btn btn-sm blue">Alterar dados</a>
                      <a href="/perfil/{{ $perfil->id }}/edit" type="button" class="btn btn-sm red">Inativar conta</a>
                 </div>
+              </div>
+            </div>
+
           </div>
         </div>
 		</form>
