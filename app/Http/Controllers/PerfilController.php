@@ -69,13 +69,11 @@ class PerfilController extends Controller {
 
 		$perfil                     = Profile::find($id);
 		$perfil->info               = $request->input('info');
-		$perfil->birthDate          = $request->input('birthDate');
 		$perfil->address            = $request->input('address');
 		$perfil->{'address_number'} = $request->input('address_number');
 		$perfil->cep                = $request->input('cep');
 		$perfil->grade              = $request->input('grade');
 		$perfil->area               = $request->input('area');
-		$perfil->cpf                = $request->input('cpf');
 		$perfil->nacionalidade      = $request->input('nacionalidade');
 
 		/* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
