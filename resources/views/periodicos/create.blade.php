@@ -11,25 +11,36 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Placeholder" name="titulo" id="titulo" type="text" class="validate">
+                            <input placeholder="Título do periódico" name="titulo" id="titulo" type="text" class="validate">
                             <label for="titulo">Título</label>
                         </div>
                         <div class="input-field col s6">
-                            <input name="issn" id="issn" type="text" class="validate">
+                            <input name="issn" id="issn" pattern="[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]" type="text" class="validate">
                             <label for="issn">ISSN</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Placeholder" name="area_atuacao" id="area_atuacao" type="text" class="validate">
+                           <!--  <input name="area_atuacao" id="area_atuacao" type="text" class="validate">
+                                @foreach($areas as $area)
+                                    <option value="{{$area->description}}">{{$area->description}}</option>
+                                @endforeach
+                            </select> -->
                             <label for="area_atuacao">Área de atuação</label>
                         </div>
                         <div class="input-field col s3">
-                            <input id="fator_impacto" name="fator_impacto" type="text" class="validate">
+                            <select id="fator_impacto" name="fator_impacto">
+                                <option value="0;1">0 até 1</option>
+                                <option value="2;3">2 até 3</option>
+                                <option value="4;5">4 até 5</option>
+                                <option value="6;7">6 até 7</option>
+                                <option value="8;9">8 até 9</option>
+                                <option value="10">10</option>
+                            </select>
                             <label for="fator_impacto">Fator de impacto</label>
                         </div>
                         <div class="input-field col s3">
-                            <input placeholder="Placeholder" name="qualis" id="qualis" type="text" class="validate">
+                            <input placeholder="Qualis" name="qualis" id="qualis" type="text" class="validate">
                             <label for="qualis">Qualis</label>
                         </div>
                     </div>
@@ -58,4 +69,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+      $(document).ready(function() {
+        $('select').material_select();
+
+
+      $('#area_atuacao').autocomplete({
+        data: {
+            {{ 
+json_encode($areas->pluck('description'))
+            }}
+        },
+        limit: 20, 
+        onAutocomplete: function(val) {
+        },
+        minLength: 1,
+      });
+            
+      });
+</script>
 @stop
