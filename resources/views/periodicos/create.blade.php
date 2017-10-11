@@ -6,7 +6,7 @@
 
 <div class="center-align">
     <canvas class="fireworks"></canvas>
-      <svg class="logo" width="60rem" height="13rem" viewBox="0 0 800 384">
+      <svg class="logo" width="60rem" height="15rem" viewBox="0 0 800 384">
         <defs>
           <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="50%" id="radialGradient-1">
             <stop stop-color="#329FFF" offset="0%"></stop>

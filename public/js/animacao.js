@@ -1,4 +1,4 @@
-    var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 var ff = navigator.userAgent.indexOf('Firefox') > 0;
 var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
 if (iOS) document.body.classList.add('iOS');
@@ -121,10 +121,10 @@ var fireworks = (function() {
     }
   });
 
-  document.addEventListener(tap, function(e) {
+  /*document.addEventListener(tap, function(e) {
     updateCoords(e);
     animateParticules(x, y);
-  }, false);
+  }, false);*/
 
   window.addEventListener('resize', setCanvasSize, false);
 
