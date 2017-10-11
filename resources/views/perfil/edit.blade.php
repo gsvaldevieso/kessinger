@@ -17,7 +17,7 @@
 							<div class="row">
 								<div class="col-md-3 col-lg-3 " align="center">
 									<div id="thumbnail">
-										<img alt="User Pic" name="user-current-img" src="{{ Auth::user()->picture() }}" class="img-circle img-responsive">
+										<img alt="User Pic" name="user-current-img" src="{{ Auth::user()->picture() }}" class="img-thumbnail img-responsive">
 									</div>
 									<div class="file-field input-field">
 										<div class="btn">
@@ -39,7 +39,7 @@
 										<tbody>
 											<tr>
 												<td>Data de nascimento:</td>
-												<td><input disabled="disabled" class="form-control datepicker" value="{{ $perfil->birthDate }}" type="text" name="birthDate" ></td>
+												<td><span style="color: black; background-color: transparent; border-color: transparent;" class="form-control" value="{{ $perfil->birthDate }}" type="text" name="birthDate">{{ $perfil->birthDate }}</span></td>
 											</tr>
 											<tr>
 												<td>Endereço:</td>
