@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Periodico;
 use App\ModelFactory;
 use App\Area;
+use Auth;
 
 class PeriodicosController extends Controller
 {
@@ -27,8 +28,8 @@ class PeriodicosController extends Controller
      */
     public function create()
     {
-
         $areas = Area::all();
+
         return view('periodicos.create')->with('areas', $areas);
     }
 
@@ -42,6 +43,7 @@ class PeriodicosController extends Controller
     {
         $factory = new ModelFactory();
         $periodico = $factory->get('Periodico');
+        $periodico->user_id = (Auth::user())->id;
         $periodico->titulo = $request->input('titulo');
         $periodico->issn = $request->input('issn');
         $periodico->imagem = base64_encode(file_get_contents($request->file('imagem')));

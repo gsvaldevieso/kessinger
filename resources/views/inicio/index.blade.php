@@ -23,13 +23,10 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-						<p class="text-center" style="font-size: x-large;">Últimas publicações</p>
 					  <div class="carousel" style="position:relative;">
-					    <!-- <a class="carousel-item" href="#one!"><img src="{{ asset('img/science.jpg') }}"></a> -->
 					    <a class="carousel-item" href="#two!"><img src="{{ asset('img/F1.medium.gif') }}"></a>
 					    <a class="carousel-item" href="#three!"><img src="{{ asset('/img/f7c285722864e80e2f49aa7851ecc2b5dcb60683.jpg') }}"></a>
 					    <a class="carousel-item" href="#four!"><img src="{{ asset('img/dmanisi-science-cover1.jpg') }}"></a>
-					    <!-- <a class="carousel-item" href="#five!"><img src="{{ asset('img/science_cover.jpg') }}"></a> -->
 					  </div>
 				</div>
 			</div>

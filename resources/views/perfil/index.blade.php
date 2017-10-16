@@ -7,6 +7,7 @@
       <div class="row">
         <form action="/perfil" method="POST">
           <div class="col-md-12 toppad" >
+            @if($perfil)
             <div class="panel panel-info">
               <div style="background-color:white;" class="panel-heading">
                 <h3 class="panel-title">{{ $perfil->full_name}}</h3>
@@ -60,6 +61,23 @@
                         </tr>
                       </tbody>
                     </table>
+                    <div class="row">
+                      <div class="col s12">
+                        <b>Pessoas que talvez você conheça:</b>
+                      </div>
+                      @foreach($autores as $autor)
+                      <div class="card col s3">
+                        <div  class="card-image waves-effect waves-block waves-light">
+                        </div>
+                        <div class="card-content">
+                          <p class="text-center">
+                            <img alt="User Pic" style="margin: 0;max-width: 80px;" src="{{$autor->picture() }}" class=""><br>
+                            {{ substr($autor->name, 0, 10) }}
+                          </p>
+                        </div>
+                      </div>
+                      @endforeach
+                    </div>
                   </div>
                 </div>
                 <div class="panel-footer">
@@ -68,6 +86,7 @@
                 </div>
               </div>
             </div>
+            @endif
           </div>
         </div>
       </form>

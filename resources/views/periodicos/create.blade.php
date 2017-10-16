@@ -21,11 +21,11 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                           <!--  <input name="area_atuacao" id="area_atuacao" type="text" class="validate">
+                            <select name="area_atuacao" id="area_atuacao" class="validate">
                                 @foreach($areas as $area)
                                     <option value="{{$area->description}}">{{$area->description}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                             <label for="area_atuacao">Área de atuação</label>
                         </div>
                         <div class="input-field col s3">
@@ -51,13 +51,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Anexar imagem</span>
+                        <div class="file-field input-field"  style="float:right;">
+                            <div class="btn green">
+                                <span>Vincular imagem ao periódico</span>
                                 <input name="imagem" type="file" multiple>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
+                                <input hidden class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
                             </div>
                         </div>
                     </div>
@@ -74,17 +74,6 @@
         $('select').material_select();
 
 
-      $('#area_atuacao').autocomplete({
-        data: {
-            {{ 
-json_encode($areas->pluck('description'))
-            }}
-        },
-        limit: 20, 
-        onAutocomplete: function(val) {
-        },
-        minLength: 1,
-      });
             
       });
 </script>
