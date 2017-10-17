@@ -51,7 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|confirmed'
         ]);
     }
 
@@ -66,12 +66,15 @@ class RegisterController extends Controller
         $novoUsuario = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($data['password'])
         ]);
 
         $novoPerfil = new Profile();
         $novoPerfil->{'user_id'} = $novoUsuario->id;
         $novoPerfil->{'full_name'} = $novoUsuario->name;
+        $novoPerfil->{'cpf'} = $data['cpf'];
+        $novoPerfil->{'birthDate'} = $data['data_nascimento'];
+        $novoPerfil->{'nacionalidade'} = $data['nacionalidade'];
         $novoPerfil->save();
 
         return $novoUsuario;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Periodico;
 use App\ModelFactory;
+use App\Area;
 
 class PeriodicosController extends Controller
 {
@@ -26,7 +27,9 @@ class PeriodicosController extends Controller
      */
     public function create()
     {
-        return view('periodicos.create');
+
+        $areas = Area::all();
+        return view('periodicos.create')->with('areas', $areas);
     }
 
     /**
