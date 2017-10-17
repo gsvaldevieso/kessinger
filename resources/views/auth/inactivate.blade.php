@@ -9,6 +9,12 @@
                     <form class="form-horizontal" role="form" method="POST" action="/inativar/">
                         {{ csrf_field() }}
 
+                        @if (isset($password))
+                        <span class="help-block red-text text-center">
+                             <strong>Senha incorreta! </strong>Por favor digite novamente!
+                        </span>
+                        @endif
+
                         <div class="form-group">
                             <label for="email" class="col-md-4 control-label">Digite sua senha:</label>
 
