@@ -160,7 +160,7 @@ var logoAnimation = function() {
 
   var dotJSRoll = anime({
     targets: '#dot-js',
-    transform: ['translate(0 0)', 'translate(950 0)'],
+    transform: ['translate(0 0)', 'translate(1095 0)'],
     delay: letters.duration - 800,
     duration: 800,
     elasticity: 300

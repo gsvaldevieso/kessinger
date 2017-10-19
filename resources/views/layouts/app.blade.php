@@ -43,7 +43,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <span><img style="width:197px;height:45px;" src="/img/prototipo4.png"/>Home</span>
+                        <span><img class="img-responsive" style="width:197px;height:45px;" src="/img/prototipo4.png"/></span>
                     </a>
                 </div>
 
@@ -70,7 +70,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
+                                    <li style="background-color: white">
                                         <a href="{{ action('PublicacoesController@create') }}">
                                             Registrar uma publicação
                                         </a>
