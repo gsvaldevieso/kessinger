@@ -20,7 +20,7 @@
 			</p>   
 	    </div>
 	    <div class="card-action">
-	    	<a href="data:application/pdf, {{$publicacao->publicacao}}" style="color:#1e88e5;text-decoration: none;">Visualizar</a>	
+	    	<a href="{{$publicacao->publicacao}}" style="color:#1e88e5;text-decoration: none;">Visualizar</a>	
 	    </div>
 	  </div>
 	</div>
