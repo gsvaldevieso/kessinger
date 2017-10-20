@@ -45,6 +45,7 @@ class PublicacoesController extends Controller
     public function store(Request $request)
     {
 		$factory = new ModelFactory();
+
         $publicacao = $factory->get('Publicacao');
 		$publicacao->titulo = $request->input('titulo');
         $publicacao->autores = $request->input('autores');
@@ -52,7 +53,13 @@ class PublicacoesController extends Controller
         $publicacao->periodico_id = $request->input('periodico');
         $publicacao->area_atuacao = $request->input('area_atuacao');
         $publicacao->categoria = $request->input('categoria');
-    	$publicacao->publicacao = base64_encode(file_get_contents($request->file('publicacao')));
+
+        if ($request->hasFile('publicacao') && $request->file('publicacao')->isValid()) {
+            $userPublicacao     = $request->file('publicacao');
+            $path               = $userPublicacao->storeAs('public/'.md5(time()).'.pdf', $request->input('publicacao'));
+            $publicacao->publicacao = $path;
+        }
+
 		$publicacao->save();
 
 		return view('publicacoes.stored');
