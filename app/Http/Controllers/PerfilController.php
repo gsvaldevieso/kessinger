@@ -79,7 +79,7 @@ class PerfilController extends Controller {
 		/* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
 		if ($request->hasFile('picture') && $request->file('picture')->isValid()) {
 			$userPicture        = $request->file('picture');
-			$path               = $userPicture->storeAs('public/'.md5(time()).'.jpg', $request->input('picture'));
+			$path               = $userPicture->storeAs('storage/'.md5(time()).'.jpg', $request->input('picture'));
 			$perfil->profilePic = $path;
 		}
 
