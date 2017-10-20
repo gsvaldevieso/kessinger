@@ -6,14 +6,19 @@
 	    <div class="card-image waves-effect waves-block waves-light">
 	      <img width="200" height="150" class="activator materialboxed" src="data:image/png;base64, {{$periodico->imagem}}">
 	    </div>
-	    <div class="card-content">
+	    <div class="card-content" style="height:200px;">
 	      <p style="font-weight: bold;text-align:center">{{ $periodico->titulo }}</p>
-	      <p class="truncate" style="text-align:justify;">
-		    {{$periodico->descricao}}
+	      <p style="text-align:justify;">
+		    {{ substr($periodico->descricao, 0, 200) }}
 		  </p>   
+		  @if($periodico->usuario())
+			  <p class="text-center">
+			  	<small>Cadastrado por {{  $periodico->usuario()->name }}</small>
+			  </p>
+		  @endif
 	    </div>
-	    <div class="card-action">
-	    	<a style="color:#1e88e5;text-decoration: none;">Visualizar</a>	
+	    <div class="card-action text-center	">
+	    	<a style="color:#1e88e5;text-decoration: none;">Visualizar publicações</a>	
 	    </div>
 	  </div>
 	</div>

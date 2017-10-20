@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <h1 class="text-center">Obrigado por contribuir com o Kessinger!</h1>
-    <a href="/periodicos" class="btn center-align">Ver últimos periódicos!</a>
+<div class="row">
+	<div class="col s12">
+		<h2 class="text-center">Seu periódico foi enviado para aprovação.</br>
+		Agradecemos a sua contribuição!</h2>	
+	</div>
+	<div class="col s12 text-center">
+		<a href="/" class="btn center-align">Voltar ao início!</a>
+	</div>
+</div>
 @stop 

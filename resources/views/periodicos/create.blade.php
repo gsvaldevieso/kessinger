@@ -93,16 +93,16 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s6">
-                                <!--  <input name="area_atuacao" id="area_atuacao" type="text" class="validate">
+<div class="input-field col s6">
+                            <select name="area_atuacao" id="area_atuacao" class="validate">
                                 @foreach($areas as $area)
-                                <option value="{{$area->description}}">{{$area->description}}</option>
+                                    <option value="{{$area->description}}">{{$area->description}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                             <label for="area_atuacao">Área de atuação</label>
                         </div>
                         <div class="input-field col s3">
-                            <select>
+                            <select id="fator_impacto" name="fator_impacto">
                                 <option value="0;1">0 até 1</option>
                                 <option value="2;3">2 até 3</option>
                                 <option value="4;5">4 até 5</option>
@@ -110,7 +110,7 @@
                                 <option value="8;9">8 até 9</option>
                                 <option value="10">10</option>
                             </select>
-                            <label>Fator de impacto</label>
+                            <label for="fator_impacto">Fator de impacto</label>
                         </div>
                         <div class="input-field col s3">
                             <input placeholder="Qualis" name="qualis" id="qualis" type="text" class="validate">
@@ -125,8 +125,8 @@
                     </div>
                     <div class="row">
                         <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Anexar imagem</span>
+                            <div class="btn green">
+                                <span>Vincular imagem ao periódico</span>
                                 <input name="imagem" type="file" multiple>
                             </div>
                             <div class="file-path-wrapper">
@@ -135,9 +135,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="submeter" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                          <i class="material-icons right">send</i>
-                        </button>
+                        <input class="waves-effect waves-light btn" type="submit" value="Submeter" />
                     </div>
                 </form>
             </div>

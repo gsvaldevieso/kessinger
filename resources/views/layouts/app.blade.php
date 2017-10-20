@@ -29,7 +29,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top yellow lighten-4">
+        <nav class="navbar navbar-default navbar-static-top grey lighten-4">
             <div class="container">
                 <div class="navbar-header">
 
@@ -43,7 +43,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <span><img class="img-responsive" style="width:197px;height:45px;" src="/img/prototipo4.png"/></span>
+                        <span><img style="width:197px;height:45px;" src="/img/prototipo4.png"/></span>
                     </a>
                 </div>
 
@@ -60,9 +60,36 @@
                             <li><a href="{{ route('login') }}">Entrar</a></li>
                             <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
                         @else
-                            <li><a href="/perfil">Perfil</a></li>
-                            <li><a href="/publicacoes">Publicações</a></li>
-                            <li><a href="/periodicos">Periódicos</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Periódicos <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ action('PeriodicosController@index') }}">
+                                            Visualizar todos
+                                        </a>
+                                        <a href="{{ action('PeriodicosController@create') }}">
+                                            Submeter um periódico
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Publicações <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ action('PublicacoesController@index') }}">
+                                            Visualizar todas
+                                        </a>
+                                        <a href="{{ action('PublicacoesController@create') }}">
+                                            Realizar publicação
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     <img style="width:32px;height:32px;" src="{{ Auth::user()->picture() }}"/>
@@ -70,14 +97,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li style="background-color: white">
-                                        <a href="{{ action('PublicacoesController@create') }}">
-                                            Registrar uma publicação
-                                        </a>
-
-                                        <a href="{{ action('PeriodicosController@create') }}">
-                                            Registrar um periódico
-                                        </a>
+                                    <li>
+                                        <a href="/perfil">Meu perfil</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
