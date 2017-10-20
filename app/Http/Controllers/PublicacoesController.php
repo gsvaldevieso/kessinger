@@ -55,8 +55,10 @@ class PublicacoesController extends Controller
         $publicacao->categoria = $request->input('categoria');
 
         if ($request->hasFile('publicacao') && $request->file('publicacao')->isValid()) {
+
+            $extension = pathinfo($request->file('publicacao')->getClientOriginalName(), PATHINFO_EXTENSION);
             $userPublicacao     = $request->file('publicacao');
-            $path               = $userPublicacao->storeAs('public/'.md5(time()).'.pdf', $request->input('publicacao'));
+            $path               = $userPublicacao->storeAs('public/'.md5(time()).".{$extension}", $request->input('publicacao'));
             $publicacao->publicacao = $path;
         }
 
