@@ -80,7 +80,7 @@
                     <h3 class="panel-title">Criar novo periódico</h3>
                 </div>
                 <div class="panel-body">
-                    <form method="POST" action="/periodicos" enctype="multipart/form-data" class="col s12">
+                    <form id="form-periodico" method="POST" action="/periodicos" enctype="multipart/form-data" class="col s12">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="input-field col s6">
@@ -113,7 +113,16 @@
                             <label for="fator_impacto">Fator de impacto</label>
                         </div>
                         <div class="input-field col s3">
-                            <input placeholder="Qualis" name="qualis" id="qualis" type="text" class="validate">
+                            <select id="qualis" name="qualis">
+                                <option value="A1">A1</option>
+                                <option value="A2">A2</option>
+                                <option value="B1">B1</option>
+                                <option value="B2">B2</option>
+                                <option value="B3">B3</option>
+                                <option value="B4">B4</option>
+                                <option value="B5">B5</option>
+                                <option value="C">C</option>
+                            </select>
                             <label for="qualis">Qualis</label>
                         </div>
                     </div>
@@ -125,23 +134,27 @@
                     </div>
                     <div class="row">
                         <div class="file-field input-field">
-                            <div class="btn green">
+                            <div id="btn-img" class="btn green">
                                 <span>Vincular imagem ao periódico</span>
                                 <input name="imagem" type="file" multiple>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
+                                <input id="imagem" class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <input class="waves-effect waves-light btn" type="submit" value="Submeter" />
+                        <button id="submeter" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                          <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -205,23 +218,22 @@
 <script type="text/javascript">
   var campoIssn = document.querySelector("#issn");
   var campoTitulo = document.querySelector("#titulo");
+  var campoDescricao = document.querySelector("#descricao");
+  var campoImagem = document.querySelector("#imagem");
   var botao = document.querySelector("#submeter");
-  console.log(campoIssn);
-  if (campoIssn.value.length != 9 || campoTitulo.value == "") {
-    botao.classList.add("disabled");
+  var form = document.querySelector("#form-periodico");
+  
+  botao.addEventListener('click', function(event){
+    event.preventDefault();
+    if (campoIssn.value.length != 9 || campoTitulo.value == "" || campoDescricao.value == "" || campoImagem.value == "") {
+    swal(
+      'Oops...',
+      'Preencha todos os campos adequadamente',
+      'error'
+    )
     }
-  campoIssn.addEventListener('focusout', function(){
-    if (campoIssn.value.length != 9 || campoTitulo.value == "") {
-    botao.classList.add("disabled");
-    }else{
-      botao.classList.remove("disabled");
-    }
-  })
-  campoTitulo.addEventListener('focusout', function(){
-    if (campoIssn.value.length != 9 || campoTitulo.value == "") {
-    botao.classList.add("disabled");
-    }else{
-      botao.classList.remove("disabled");
+    else{
+      form.submit();
     }
   })
 </script>

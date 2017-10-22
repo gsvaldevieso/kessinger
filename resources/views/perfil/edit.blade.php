@@ -3,7 +3,7 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <body class="deep-purple accent-4">
 	<div id="particles-js"></div>
-	<div id="editaPerfil" class="container">
+	<div id="perfil" class="container">
 		<div class="row">
 			<form action="/perfil/{{ $perfil->id }}" method="POST" enctype="multipart/form-data">
 				{{ csrf_field() }}

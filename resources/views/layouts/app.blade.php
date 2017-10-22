@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" />
      <link href="{{ asset('css/icon.css')}}" rel="stylesheet">
+     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
    <script
   src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
@@ -43,7 +44,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <span><img style="width:197px;height:45px;" src="/img/prototipo4.png"/></span>
+                        <span><img class="img-responsive" style="width:197px;height:45px;" src="/img/prototipo4.png"/></span>
                     </a>
                 </div>
 

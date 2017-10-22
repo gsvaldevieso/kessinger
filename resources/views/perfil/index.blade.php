@@ -2,7 +2,7 @@
 @section('content')
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <body style="background-color: #0D47A1">
-  <div id="particles-js">
+  <div id="particles-perfil"></div>
     <div id="perfil" class="container">
       <div class="row">
         <form action="/perfil" method="POST">
@@ -14,7 +14,7 @@
               </div>
               <div class="panel-body">
                 <div class="row">
-                  <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ Auth::user()->picture() }}" class="img-circle img-responsive"> </div>
+                  <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ Auth::user()->picture() }}" class="img-tumbnail img-responsive"> </div>
                   <div class=" col-md-9 col-lg-9 ">
                     <span><h3>Sobre mim</h3></span>
                     <div class="row">
@@ -88,12 +88,11 @@
             </div>
             @endif
           </div>
-        </div>
       </form>
     </div>
   </div>
 </div>
 <script src="/js/particles.js"></script>
-<script>particlesJS.load('particles-js', '/config/package.json', function() {});</script>
+<script>particlesJS.load('particles-perfil', '/config/package.json', function() {});</script>
 </body>
 @stop
