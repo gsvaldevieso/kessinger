@@ -107,20 +107,20 @@
     </div>
 </div>
 
-< src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-< type="text/java">   
+<script type="text/javascript">   
 $(document).ready(function() {
 $('select').material_select();
 });
-</>
+</script>
 
-< src="{{ asset('js/anime.min.js') }}"></>
-< src="{{ asset('js/animacao.js') }}"></>
+<script src="{{ asset('js/anime.min.js') }}"></script>
+<script src="{{ asset('js/animacao.js') }}"></script>
 
-< src="/js/particles.js"></>
-<>particlesJS.load('particles-js', '/config/particlesjsPublicacao.json', function() {});</>
-<>
+<script src="/js/particles.js"></script>
+<script>particlesJS.load('particles-js', '/config/particlesjsPublicacao.json', function() {});</script>
+<script>
     var d = new Date();
     d.setFullYear( d.getFullYear() - 100 );
 
@@ -143,9 +143,9 @@ $('select').material_select();
     labelYearSelect: 'Selecione o ano',
     closeOnSelect: false // Close upon selecting a date,
   });
-</>
+</script>
 
-< type="text/java">
+<script type="text/javascript">
   var campoAutores = document.querySelector("#autores");
   var campoTitulo = document.querySelector("#titulo");
   var campoAno = document.querySelector("#ano");
@@ -166,6 +166,4 @@ $('select').material_select();
       form.submit();
     }
   })
-</>
-</body>
-@stop
+</script>
