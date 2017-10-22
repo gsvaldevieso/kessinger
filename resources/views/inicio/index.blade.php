@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+
+    @if ( app('request')->attributes->get('activateMessage') !== null )
+    <div class = "row center">
+    	<span class="help-block green-text text-centered" style="font-size: large;">
+        	<strong>{{ app('request')->attributes->get('activateMessage') }}</strong>
+    	</span>
+    </div>
+    @endif
+
 	<div class="row">
 		<form action="/publicacoes" method="GET">
 			<div class="col-md-12 text-center">
@@ -14,7 +23,7 @@
 			      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 			      </span>
 				</div>
-				</div>	
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -24,7 +33,7 @@
 			<div class="row">
 				<div class="col-md-12">
 						<p class="text-center" style="font-size: x-large;">Últimas publicações</p>
-					  <div class="carousel" style="position:relative;">
+					  	<div class="carousel" style="position:relative;">
 					    <!-- <a class="carousel-item" href="#one!"><img src="{{ asset('img/science.jpg') }}"></a> -->
 					    <a class="carousel-item" href="#two!"><img src="{{ asset('img/F1.medium.gif') }}"></a>
 					    <a class="carousel-item" href="#three!"><img src="{{ asset('/img/f7c285722864e80e2f49aa7851ecc2b5dcb60683.jpg') }}"></a>
@@ -34,11 +43,11 @@
 				</div>
 			</div>
 		</form>
-	</div>	
+	</div>
 
 	<script type="text/javascript">
 		   $(document).ready(function(){
       $('.carousel').carousel();
     });
 	</script>
-@stop 
+@stop

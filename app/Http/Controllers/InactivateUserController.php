@@ -17,7 +17,7 @@ class InactivateUserController extends Controller {
 			Auth::user()->inactivate();
 			Auth::logout();
 
-			return view('auth.login')->with('validationMessage' => 'Sua conta foi desativada com sucesso!']);
+			return view('auth.login')->with(['validationMessage' => 'Sua conta foi desativada com sucesso!']);
 		}
 
 		return view('auth.inactivate')->with('password', true);

@@ -17,7 +17,7 @@ class CheckAuthMiddleware {
 		if (!Auth::guest()) {
 			if (!Auth::user()->isActivated()) {
 				Auth::user()    ->activate();
-				$request->attributes->add(['activate' => 'true']);
+				$request->attributes->add(['activateMessage' => 'Sua conta foi reativada!']);
 			}
 		}
 
