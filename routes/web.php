@@ -19,6 +19,7 @@ Auth::routes();
 Route::resource('authors', 'AuthorsController');
 Route::resource('perfil', 'PerfilController');
 Route::get('/publicacoes', 'PublicacoesController@index');
+Route::get('/publicacoes/periodico/{id}', 'PublicacoesController@filtro');
 Route::get('/inativar', 'InactivateUserController@index');
 Route::post('/inativar', 'InactivateUserController@inativar');
 Route::get('/filtro', 'FiltroController@index')->name('filtro');

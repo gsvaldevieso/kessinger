@@ -36,6 +36,12 @@ class PublicacoesController extends Controller
         return view('publicacoes.create')->with('periodicos', $periodicos);
     }
 
+    public function filtro($id)
+    {
+        $publicacoes = Publicacao::where('periodico_id', $id)->get();
+        return view('publicacoes.index')->with('publicacoes', $publicacoes);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
