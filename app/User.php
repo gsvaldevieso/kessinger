@@ -31,7 +31,7 @@ class User extends Authenticatable {
 	];
 
 	public function picture() {
-		$usuarioAtual = Profile::where('user_id', \Auth::user()->id)->first();
+		$usuarioAtual = Profile::where('user_id', $this->id)->first();
 
 		if (!$usuarioAtual) {
 			return '/storage/default.png';

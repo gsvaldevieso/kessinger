@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profile;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,15 @@ class PerfilController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$usuarioAtual = Profile::where('user_id', Auth::user()->id)->first();
+		$usuarioAtual = Profile::where('user_id', Auth::user()->id);
+		$outrosAutores = User::all();
 
-		return view('perfil.index')->with('perfil', $usuarioAtual);
+		if ($usuarioAtual) {
+			$usuarioAtual = $usuarioAtual->first();
+		}
+
+		return view('perfil.index')->with('perfil', $usuarioAtual)
+			->with('autores', $outrosAutores);
 	}
 
 	/**
@@ -44,7 +51,6 @@ class PerfilController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id) {
-		//
 	}
 
 	/**

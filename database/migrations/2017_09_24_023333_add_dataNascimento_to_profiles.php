@@ -14,7 +14,7 @@ class AddDataNascimentoToProfiles extends Migration
     public function up()
     {
         Schema::table('profiles', function(Blueprint $table) {
-        $table->date('birthDate')->nullable();
+            $table->date('birthDate')->nullable();
         });
     }
 

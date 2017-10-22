@@ -6,8 +6,10 @@
 
 <div class="center-align">
     <canvas class="fireworks"></canvas>
-      <svg class="logo" width="60rem" height="15rem" viewBox="0 0 800 384">
-        <defs>
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width = "50%" height="auto" viewBox="0 0 1296 250" style="enable-background:new 0 0 1296 384;" xml:space="preserve">
+<defs>
           <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="50%" id="radialGradient-1">
             <stop stop-color="#329FFF" offset="0%"></stop>
             <stop stop-color="#206EFF" offset="100%"></stop>
@@ -41,9 +43,9 @@
             <stop stop-color="#6a1b9a" offset="100%"></stop>
           </linearGradient>
         </defs>
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <rect id="dot-js" fill="#FFFFFF" x="80" y="352" width="32" height="32" rx="16"></rect>
-          <g id="lines" transform="translate(-60.000000, 223.000000)">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <rect id="dot-js" fill="#FFFFFF" x="70" y="195" width="32" height="32" rx="16"></rect>
+          <g id="lines" transform="translate(85.000000, 60.000000)">
             <path d="M141.6,161.21H112.4l-57.4-45A24.28,24.28,0,0,1,45.4,100q-1-7.8,5.25-17.19l43-64.58q2.4-3.43-1-5.65T87,13.81L55.8,60.21,35,90.41H28.8V15.81q0-4-3.9-4-4.1,0-4.1,4V146.57A14.37,14.37,0,0,1,16.7,157a13.79,13.79,0,0,1-10.3,4.21H1V150.79l5.2-.2q4.2-.2,4.2-4V15.85A14.06,14.06,0,0,1,25,1.21a14,14,0,0,1,14.6,14.6v49.4q4.6-6.62,7.4-10.83L78.2,7.63a14.79,14.79,0,0,1,9.4-6.42,14.5,14.5,0,0,1,9,1.4q8.4,4.2,8.4,12.82a14.6,14.6,0,0,1-2.6,8.41L71.2,70.51,59,88.93q-3.2,4.81-3.2,8.41,0,6,5.8,10.42L116,150h25.6Z" id="line-k" stroke="#88CC88" stroke-width="3"></path>
             <path d="M249.6,1.21a14.57,14.57,0,0,1,10.6,4.1,14,14,0,0,1,4.2,10.5,14,14,0,0,1-4.2,10.5,14.55,14.55,0,0,1-10.6,4.1h-56a12.7,12.7,0,0,0-13.4,13.4,12.7,12.7,0,0,0,13.4,13.4H231a14,14,0,0,1,14.6,14.6q0,6.6-4,10.6t-10.6,4H193.6a12.7,12.7,0,0,0-13.4,13.4q0,13.4,13.4,13.4h56A14.36,14.36,0,0,1,264.4,128a14,14,0,0,1-4.3,10.4,14.47,14.47,0,0,1-10.5,4.2H184.4q-4.2,0-4.2,4t4.2,4h89.2v10.6H184.4a14.55,14.55,0,0,1-10.6-4.1,15.22,15.22,0,0,1,0-21,14.56,14.56,0,0,1,10.6-4.1h65.2q4.2,0,4.2-3.9,0-4.1-4.2-4.1h-56a23.2,23.2,0,0,1-17.2-6.86q-6.8-6.85-6.8-17.34t6.8-17.24q6.8-6.76,17.2-6.76H231q4,0,4-4.1,0-3.9-4-3.9H193.6q-10.4,0-17.2-6.8t-6.8-17.2q0-10.4,6.8-17.2t17.2-6.8h56q4.2,0,4.2-4t-4.2-4h-88v134.8a14,14,0,0,1-14.6,14.6h-5.4v-10.6h5.2q4.2-.2,4.2-4V1.21Z" id="line-e" stroke="#88CC88" stroke-width="3"></path>
             <path d="M300.4,10.81a51.05,51.05,0,0,1,59.6,0q17.4,12.8,17.4,37.8v4.6a14.6,14.6,0,1,1-29.2,0v-4.6q0-11-8.4-15.6a19.28,19.28,0,0,0-9.6-2.6,19.62,19.62,0,0,0-9.8,2.6q-8.4,4.6-8.4,15.6,0,10.8,8.4,15.4a20.34,20.34,0,0,0,9.8,2.6,49.42,49.42,0,0,1,29.8,9.6q17.4,12.8,17.4,37.6,0,24-16.4,36.8h25.8v10.6H330.2v-10.6a40.21,40.21,0,0,0,18.8-4.8q17.8-9.2,17.8-32,0-22.6-17.8-31.8-7-3.6-19.4-4.8-28.2-2.6-28.2-28.6,0-12.6,8.1-20.7t20.7-8.1q12.6,0,20.6,8.1t8,20.7v4.6q0,4,4,4t4-4v-4.6q0-22.8-17.8-32a39.61,39.61,0,0,0-37.8,0q-17.8,9.2-17.8,32,0,22.6,17.8,31.8a40.58,40.58,0,0,0,19,4.8q12.4,0,20.5,8.1t8.1,20.5q0,12.6-8,20.7t-20.6,8.1q-12.6,0-20.7-8.1t-8.1-20.7v-9.2q0-4.2-4-4.2t-4,4.2v42a14.35,14.35,0,0,1-14.6,14.6h-5.4v-10.4l5.2-.2q4.2-.2,4.2-4v-42q0-6.6,4-10.6t10.6-4a13.75,13.75,0,0,1,14.6,14.6v9.2q0,11,8.4,15.6A19.23,19.23,0,0,0,330,132a19.6,19.6,0,0,0,9.8-2.6q8.4-4.6,8.4-15.6,0-10.8-8.4-15.4a20,20,0,0,0-9.6-2.6,49.41,49.41,0,0,1-29.8-9.6q-17.6-12.8-17.6-37.6Q282.8,23.61,300.4,10.81Z" id="line-s-1" stroke="#88CC88" stroke-width="3"></path>
@@ -54,7 +56,7 @@
             <path d="M920.19,1.21a14.56,14.56,0,0,1,10.6,4.1,14,14,0,0,1,4.2,10.5,14,14,0,0,1-4.2,10.5,14.55,14.55,0,0,1-10.6,4.1h-56a12.7,12.7,0,0,0-13.4,13.4,12.7,12.7,0,0,0,13.4,13.4h37.4a14,14,0,0,1,14.6,14.6q0,6.6-4,10.6t-10.6,4h-37.4a12.7,12.7,0,0,0-13.4,13.4q0,13.4,13.4,13.4h56A14.36,14.36,0,0,1,935,128a14,14,0,0,1-4.3,10.4,14.47,14.47,0,0,1-10.5,4.2H855q-4.2,0-4.2,4t4.2,4h89.2v10.6H855a14.55,14.55,0,0,1-10.6-4.1,15.22,15.22,0,0,1,0-21A14.56,14.56,0,0,1,855,132h65.2q4.2,0,4.2-3.9,0-4.1-4.2-4.1h-56a23.2,23.2,0,0,1-17.2-6.86q-6.8-6.85-6.8-17.34T847,82.57q6.8-6.76,17.2-6.76h37.4q4,0,4-4.1,0-3.9-4-3.9h-37.4q-10.4,0-17.2-6.8t-6.8-17.2q0-10.4,6.8-17.2t17.2-6.8h56q4.2,0,4.2-4t-4.2-4h-88v134.8a14,14,0,0,1-14.6,14.6h-5.4v-10.6h5.2q4.2-.2,4.2-4V1.21Z" id="line-e" stroke="#88CC88" stroke-width="3"></path>
             <path d="M1066.79,150.61v10.6H1050l-75.8-75.6V76h40.6a36.39,36.39,0,0,0,16.6-4.4q15.4-8,15.4-27.8T1031.39,16a36.08,36.08,0,0,0-16.6-4.2H964v134.8a14,14,0,0,1-14.6,14.6H944v-10.4l5.2-.2q4.2-.2,4.2-4V1.21h61.4a44.37,44.37,0,0,1,26.8,8.6q15.8,11.6,15.8,34t-15.8,34a44.35,44.35,0,0,1-26.8,8.6H990l64.2,64.2Z" id="line-r" stroke="#88CC88" stroke-width="3"></path>
           </g>
-          <g id="fills" transform="translate(-60.000000, 223.000000)">
+          <g id="fills" transform="translate(85.000000, 60.000000)">
             <path d="M141.6,161.21H112.4l-57.4-45A24.28,24.28,0,0,1,45.4,100q-1-7.8,5.25-17.19l43-64.58q2.4-3.43-1-5.65T87,13.81L55.8,60.21,35,90.41H28.8V15.81q0-4-3.9-4-4.1,0-4.1,4V146.57A14.37,14.37,0,0,1,16.7,157a13.79,13.79,0,0,1-10.3,4.21H1V150.79l5.2-.2q4.2-.2,4.2-4V15.85A14.06,14.06,0,0,1,25,1.21a14,14,0,0,1,14.6,14.6v49.4q4.6-6.62,7.4-10.83L78.2,7.63a14.79,14.79,0,0,1,9.4-6.42,14.5,14.5,0,0,1,9,1.4q8.4,4.2,8.4,12.82a14.6,14.6,0,0,1-2.6,8.41L71.2,70.51,59,88.93q-3.2,4.81-3.2,8.41,0,6,5.8,10.42L116,150h25.6Z" id="fill-k" fill="#88CC88"></path>
             <path d="M249.6,1.21a14.57,14.57,0,0,1,10.6,4.1,14,14,0,0,1,4.2,10.5,14,14,0,0,1-4.2,10.5,14.55,14.55,0,0,1-10.6,4.1h-56a12.7,12.7,0,0,0-13.4,13.4,12.7,12.7,0,0,0,13.4,13.4H231a14,14,0,0,1,14.6,14.6q0,6.6-4,10.6t-10.6,4H193.6a12.7,12.7,0,0,0-13.4,13.4q0,13.4,13.4,13.4h56A14.36,14.36,0,0,1,264.4,128a14,14,0,0,1-4.3,10.4,14.47,14.47,0,0,1-10.5,4.2H184.4q-4.2,0-4.2,4t4.2,4h89.2v10.6H184.4a14.55,14.55,0,0,1-10.6-4.1,15.22,15.22,0,0,1,0-21,14.56,14.56,0,0,1,10.6-4.1h65.2q4.2,0,4.2-3.9,0-4.1-4.2-4.1h-56a23.2,23.2,0,0,1-17.2-6.86q-6.8-6.85-6.8-17.34t6.8-17.24q6.8-6.76,17.2-6.76H231q4,0,4-4.1,0-3.9-4-3.9H193.6q-10.4,0-17.2-6.8t-6.8-17.2q0-10.4,6.8-17.2t17.2-6.8h56q4.2,0,4.2-4t-4.2-4h-88v134.8a14,14,0,0,1-14.6,14.6h-5.4v-10.6h5.2q4.2-.2,4.2-4V1.21Z" id="fill-e" fill="#88CC88"></path>
             <path d="M300.4,10.81a51.05,51.05,0,0,1,59.6,0q17.4,12.8,17.4,37.8v4.6a14.6,14.6,0,1,1-29.2,0v-4.6q0-11-8.4-15.6a19.28,19.28,0,0,0-9.6-2.6,19.62,19.62,0,0,0-9.8,2.6q-8.4,4.6-8.4,15.6,0,10.8,8.4,15.4a20.34,20.34,0,0,0,9.8,2.6,49.42,49.42,0,0,1,29.8,9.6q17.4,12.8,17.4,37.6,0,24-16.4,36.8h25.8v10.6H330.2v-10.6a40.21,40.21,0,0,0,18.8-4.8q17.8-9.2,17.8-32,0-22.6-17.8-31.8-7-3.6-19.4-4.8-28.2-2.6-28.2-28.6,0-12.6,8.1-20.7t20.7-8.1q12.6,0,20.6,8.1t8,20.7v4.6q0,4,4,4t4-4v-4.6q0-22.8-17.8-32a39.61,39.61,0,0,0-37.8,0q-17.8,9.2-17.8,32,0,22.6,17.8,31.8a40.58,40.58,0,0,0,19,4.8q12.4,0,20.5,8.1t8.1,20.5q0,12.6-8,20.7t-20.6,8.1q-12.6,0-20.7-8.1t-8.1-20.7v-9.2q0-4.2-4-4.2t-4,4.2v42a14.35,14.35,0,0,1-14.6,14.6h-5.4v-10.4l5.2-.2q4.2-.2,4.2-4v-42q0-6.6,4-10.6t10.6-4a13.75,13.75,0,0,1,14.6,14.6v9.2q0,11,8.4,15.6A19.23,19.23,0,0,0,330,132a19.6,19.6,0,0,0,9.8-2.6q8.4-4.6,8.4-15.6,0-10.8-8.4-15.4a20,20,0,0,0-9.6-2.6,49.41,49.41,0,0,1-29.8-9.6q-17.6-12.8-17.6-37.6Q282.8,23.61,300.4,10.81Z" id="fill-s-1" fill="#88CC88"></path>
@@ -65,7 +67,8 @@
             <path d="M1066.79,150.61v10.6H1050l-75.8-75.6V76h40.6a36.39,36.39,0,0,0,16.6-4.4q15.4-8,15.4-27.8T1031.39,16a36.08,36.08,0,0,0-16.6-4.2H964v134.8a14,14,0,0,1-14.6,14.6H944v-10.4l5.2-.2q4.2-.2,4.2-4V1.21h61.4a44.37,44.37,0,0,1,26.8,8.6q15.8,11.6,15.8,34t-15.8,34a44.35,44.35,0,0,1-26.8,8.6H990l64.2,64.2Z" id="fill-r" fill="#88CC88"></path>
           </g>
         </g>
-      </svg>
+</svg>
+
 </div>
 
 
@@ -81,25 +84,25 @@
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="input-field col s6">
-                                <input placeholder="Título do periódico" name="titulo" id="titulo" type="text" class="validate">
+                                <input placeholder="Digite o título do periódico" name="titulo" id="titulo" type="text" class="validate">
                                 <label for="titulo">Título</label>
                             </div>
                             <div class="input-field col s6">
-                                <input name="issn" id="issn" pattern="[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]" type="text" class="validate">
+                                <input placeholder="Digite o ISSN" name="issn" id="issn" pattern="[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][X0-9]" type="text" class="validate">
                                 <label for="issn">ISSN</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s6">
-                                <!--  <input name="area_atuacao" id="area_atuacao" type="text" class="validate">
+<div class="input-field col s6">
+                            <select name="area_atuacao" id="area_atuacao" class="validate">
                                 @foreach($areas as $area)
-                                <option value="{{$area->description}}">{{$area->description}}</option>
+                                    <option value="{{$area->description}}">{{$area->description}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                             <label for="area_atuacao">Área de atuação</label>
                         </div>
                         <div class="input-field col s3">
-                            <select>
+                            <select id="fator_impacto" name="fator_impacto">
                                 <option value="0;1">0 até 1</option>
                                 <option value="2;3">2 até 3</option>
                                 <option value="4;5">4 até 5</option>
@@ -107,7 +110,7 @@
                                 <option value="8;9">8 até 9</option>
                                 <option value="10">10</option>
                             </select>
-                            <label>Fator de impacto</label>
+                            <label for="fator_impacto">Fator de impacto</label>
                         </div>
                         <div class="input-field col s3">
                             <input placeholder="Qualis" name="qualis" id="qualis" type="text" class="validate">
@@ -122,8 +125,8 @@
                     </div>
                     <div class="row">
                         <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Anexar imagem</span>
+                            <div class="btn green">
+                                <span>Vincular imagem ao periódico</span>
                                 <input name="imagem" type="file" multiple>
                             </div>
                             <div class="file-path-wrapper">
@@ -159,6 +162,16 @@
 
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('#issn').mask('AAAA-AAAY', {'translation': {
+    A: {pattern: /[0-9]/},
+    Y: {pattern: /[X0-9]/}
+  }
+});
+    });
+</script>
+
+<script type="text/javascript">
     $(document).ready(function() {
         $('select').material_select();
     });
@@ -188,6 +201,31 @@
 
 
 <script src="{{ asset('js/animacao.js') }}"></script>
+
+<script type="text/javascript">
+  var campoIssn = document.querySelector("#issn");
+  var campoTitulo = document.querySelector("#titulo");
+  var botao = document.querySelector("#submeter");
+  console.log(campoIssn);
+  if (campoIssn.value.length != 9 || campoTitulo.value == "") {
+    botao.classList.add("disabled");
+    }
+  campoIssn.addEventListener('focusout', function(){
+    if (campoIssn.value.length != 9 || campoTitulo.value == "") {
+    botao.classList.add("disabled");
+    }else{
+      botao.classList.remove("disabled");
+    }
+  })
+  campoTitulo.addEventListener('focusout', function(){
+    if (campoIssn.value.length != 9 || campoTitulo.value == "") {
+    botao.classList.add("disabled");
+    }else{
+      botao.classList.remove("disabled");
+    }
+  })
+</script>
+
 
 </body>
 @stop
