@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+
+    @if ( app('request')->attributes->get('activateMessage') !== null )
+    <div class = "row center">
+    	<span class="help-block green-text text-centered" style="font-size: large;">
+        	<strong>{{ app('request')->attributes->get('activateMessage') }}</strong>
+    	</span>
+    </div>
+    @endif
+
 	<div class="row">
 		<form action="/publicacoes" method="GET">
 			<div class="col-md-12 text-center">
@@ -14,7 +23,7 @@
 			      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 			      </span>
 				</div>
-				</div>	
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -31,11 +40,11 @@
 				</div>
 			</div>
 		</form>
-	</div>	
+	</div>
 
 	<script type="text/javascript">
 		   $(document).ready(function(){
       $('.carousel').carousel();
     });
 	</script>
-@stop 
+@stop
