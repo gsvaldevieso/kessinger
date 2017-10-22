@@ -16,11 +16,8 @@ class InactivateUserController extends Controller {
 		if (Hash::check($request->password, Auth::user()->password)) {
 			Auth::user()->inactivate();
 			Auth::logout();
-
-			return view('auth.login')->with('validationMessage' => 'Sua conta foi desativada com sucesso!']);
+			return view('auth.login')->with(['validationMessage' => 'Sua conta foi desativada com sucesso!']);
 		}
-
 		return view('auth.inactivate')->with('password', true);
-
 	}
 }
