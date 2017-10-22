@@ -44,21 +44,21 @@
                 <h3 class="panel-title">Criar nova publicação</h3>
             </div>
             <div class="panel-body">
-                <form method="POST" action="/publicacoes" enctype="multipart/form-data" class="col s12">
+                <form id="form-publicacao" method="POST" action="/publicacoes" enctype="multipart/form-data" class="col s12">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Placeholder" name="autores" id="autores" type="text" class="validate">
-                            <label for="autores">Autores</label>
+                            <input placeholder="Digite o nome do(s) autor(es)" name="autores" id="autores" type="text" class="validate">
+                            <label for="autores">Autor(es)</label>
                         </div>
                         <div class="input-field col s6">
-                            <input name="titulo" id="titulo" type="text" class="validate">
+                            <input placeholder="Digite o título" name="titulo" id="titulo" type="text" class="validate">
                             <label for="titulo">Título</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input name="ano" placeholder="Placeholder" id="ano" type="text" class="validate">
+                            <input id="ano" type="text" class="form-control datepicker" name="ano" required>
                             <label for="ano">Ano da publicação</label>
                         </div>
                         <div class="input-field col s6">
@@ -68,7 +68,11 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input name="categoria" placeholder="Placeholder" id="categoria" type="text" class="validate">
+                            <select id="categoria" name="categoria">
+                                <option value="A">Artigo científico</option>
+                                <option value="M">Monografia</option>
+                                <option value="R">Resumo expandido</option>
+                            </select>
                             <label for="categoria">Categoria</label>
                         </div>
                         <div class="input-field col s6">
@@ -87,12 +91,14 @@
                                 <input name="publicacao" type="file" multiple>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
+                                <input id="imagem" class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <input class="waves-effect waves-light btn" type="submit" value="Submeter" />
+                        <button id="submeter" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                          <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </form>
                 
@@ -101,16 +107,65 @@
     </div>
 </div>
 
-<script type="text/javascript">   
+< src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></>
+
+< type="text/java">   
 $(document).ready(function() {
 $('select').material_select();
 });
-</script>
+</>
 
-<script src="{{ asset('js/anime.min.js') }}"></script>
-<script src="{{ asset('js/animacao.js') }}"></script>
+< src="{{ asset('js/anime.min.js') }}"></>
+< src="{{ asset('js/animacao.js') }}"></>
 
-<script src="/js/particles.js"></script>
-<script>particlesJS.load('particles-js', '/config/particlesjsPublicacao.json', function() {});</script>
+< src="/js/particles.js"></>
+<>particlesJS.load('particles-js', '/config/particlesjsPublicacao.json', function() {});</>
+<>
+    var d = new Date();
+    d.setFullYear( d.getFullYear() - 100 );
+
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    max: new Date(),
+    selectYears: 100,
+    format: 'dd/mm/yyyy',
+    today: 'Hoje',
+    clear: 'Limpar',
+    close: 'Ok',
+    monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
+    monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mar', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+    weekdaysFull: [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado' ],
+    weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
+    weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+    labelMonthNext: 'Próximo Mês',
+    labelMonthPrev: 'Mês anterior',
+    labelMonthSelect: 'Selecione o Mês',
+    labelYearSelect: 'Selecione o ano',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+</>
+
+< type="text/java">
+  var campoAutores = document.querySelector("#autores");
+  var campoTitulo = document.querySelector("#titulo");
+  var campoAno = document.querySelector("#ano");
+  var campoImagem = document.querySelector("#imagem");
+  var botao = document.querySelector("#submeter");
+  var form = document.querySelector("#form-publicacao");
+  
+  botao.addEventListener('click', function(event){
+    event.preventDefault();
+    if (campoAutores.value.length == "" || campoTitulo.value == "" || campoAno.value == "" || campoImagem.value == "") {
+    swal(
+      'Oops...',
+      'Preencha todos os campos adequadamente',
+      'error'
+    )
+    }
+    else{
+      form.submit();
+    }
+  })
+</>
 </body>
 @stop
