@@ -13,19 +13,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" />
-     <link href="{{ asset('css/icon.css')}}" rel="stylesheet">
-     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-   <script
-  src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <link href="{{ asset('css/icon.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script
+    src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/picker.date.js') }}"></script>
     <script src="{{ asset('js/pt_BR.js') }}"></script>
     <script src="{{ asset('js/materialize.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-          integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-          crossorigin="anonymous"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+    crossorigin="anonymous"/>
 
 </head>
 <body>
@@ -58,68 +58,68 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Entrar</a></li>
-                            <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
+                        <li><a href="{{ route('login') }}">Entrar</a></li>
+                        <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Periódicos <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ action('PeriodicosController@index') }}">
-                                            Visualizar todos
-                                        </a>
-                                        <a href="{{ action('PeriodicosController@create') }}">
-                                            Submeter um periódico
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Publicações <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ action('PublicacoesController@index') }}">
-                                            Visualizar todas
-                                        </a>
-                                        <a href="{{ action('PublicacoesController@create') }}">
-                                            Realizar publicação
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img style="width:32px;height:32px;" src="{{ Auth::user()->picture() }}"/>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Periódicos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ action('PeriodicosController@index') }}">
+                                        Visualizar todos
+                                    </a>
+                                    <a href="{{ action('PeriodicosController@create') }}">
+                                        Submeter um periódico
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Publicações <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ action('PublicacoesController@index') }}">
+                                        Visualizar todas
+                                    </a>
+                                    <a href="{{ action('PublicacoesController@create') }}">
+                                        Realizar publicação
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img style="width:32px;height:32px;" src="{{ Auth::user()->picture() }}"/>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/perfil">Meu perfil</a>
+                                    <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    Logout
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="/perfil">Meu perfil</a>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
-                        @endif
-                    </ul>
-                </div>
+                        </ul>
+                    </li>
+                    @endif
+                </ul>
             </div>
-        </nav>
-        @yield('content')
-    </div>
+        </div>
+    </nav>
+    @yield('content')
+</div>
 
-    <!-- Scripts -->
+<!-- Scripts -->
 </body>
 </html>

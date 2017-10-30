@@ -54,7 +54,7 @@ class User extends Authenticatable {
 	}
 
 	public function isActivated() {
-		$usuarioAtual = User::where('id', Auth::user()->id)->first();
+		$usuarioAtual = User::where('id', $this->id)->first();
 
 		return $usuarioAtual->active;
 	}
