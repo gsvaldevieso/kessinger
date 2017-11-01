@@ -19,7 +19,8 @@
 					</p>
 				</div>
 				<div class="card-action">
-					<a href="{{$publicacao->publicacao()}}" style="color:#1e88e5;text-decoration: none;">Visualizar</a>
+					<!-- <a href="{{$publicacao->publicacao()}}" style="color:#1e88e5;text-decoration: none;">Visualizar</a> -->
+					<a href="/publicacoes/{{ $publicacao->id }}">Visualizar</a>
 				</div>
 			</div>
 		</div>
