@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Publicacao;
 use App\Periodico;
 use App\ModelFactory;
+use Auth;
 
 class PublicacoesController extends Controller
 {
@@ -23,6 +24,12 @@ class PublicacoesController extends Controller
 			$publicacoes = Publicacao::all();
 
     	return view('publicacoes.index')->with('publicacoes', $publicacoes);
+    }
+
+    public function userPublicacao()
+    {
+        $userPublicacoes = Publicacao::getUserPublicacoes();
+        return view('publicacoes.index')->with('publicacoes', $userPublicacoes);
     }
 
     /**
@@ -115,6 +122,7 @@ class PublicacoesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+        $publicacao->delete();
     }
 }

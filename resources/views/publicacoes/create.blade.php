@@ -69,9 +69,9 @@
                     <div class="row">
                         <div class="input-field col s6">
                             <select id="categoria" name="categoria">
-                                <option value="A">Artigo científico</option>
-                                <option value="M">Monografia</option>
-                                <option value="R">Resumo expandido</option>
+                                <option value="Artigo Científico">Artigo científico</option>
+                                <option value="Monografia">Monografia</option>
+                                <option value="Resumo expandido">Resumo expandido</option>
                             </select>
                             <label for="categoria">Categoria</label>
                         </div>

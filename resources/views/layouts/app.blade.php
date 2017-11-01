@@ -88,6 +88,9 @@
                                     <a href="{{ action('PublicacoesController@index') }}">
                                         Visualizar todas
                                     </a>
+                                    <a href="{{ action('PublicacoesController@userPublicacao') }}">
+                                        Visualizar meus
+                                    </a>
                                     <a href="{{ action('PublicacoesController@create') }}">
                                         Realizar publicação
                                     </a>

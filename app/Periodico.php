@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Publicacao;
 
 class Periodico extends Model
 {
@@ -16,5 +17,11 @@ class Periodico extends Model
     	}
     	
     	return null;
+    }
+
+    public function publicacoes()
+    {
+    	$publicacoes = Publicacao::where('periodico_id', $this->id);
+    	return $publicacoes;
     }
 }
