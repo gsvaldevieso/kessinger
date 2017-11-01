@@ -21,6 +21,13 @@ class PeriodicosController extends Controller
         return view('periodicos.index')->with('periodicos', $periodicos);
     }
 
+
+    public function userPeriodics()
+    {
+        $periodicos = Periodico::where('user_id', Auth::user()->id)->get();
+        return view('periodicos.index')->with('periodicos', $periodicos);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

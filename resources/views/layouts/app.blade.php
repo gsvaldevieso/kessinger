@@ -70,6 +70,9 @@
                                     <a href="{{ action('PeriodicosController@index') }}">
                                         Visualizar todos
                                     </a>
+                                     <a href="{{ action('PeriodicosController@userPeriodics') }}">
+                                        Visualizar meus
+                                    </a>
                                     <a href="{{ action('PeriodicosController@create') }}">
                                         Submeter um periódico
                                     </a>
