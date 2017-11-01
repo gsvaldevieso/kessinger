@@ -87,7 +87,8 @@ class PublicacoesController extends Controller
      */
     public function show($id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+        return view('publicacoes.show')->with('publicacao', $publicacao);
     }
 
     /**
