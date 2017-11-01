@@ -25,6 +25,12 @@ class PublicacoesController extends Controller
     	return view('publicacoes.index')->with('publicacoes', $publicacoes);
     }
 
+    public function userPublication()
+    {
+        $publicacoes = Publicacao::where('user_id', Auth::user()->id)->get();
+        return view('publicacoes.index')->with('publicacoes', $publicacoes);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
