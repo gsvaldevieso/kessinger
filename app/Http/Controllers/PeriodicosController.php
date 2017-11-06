@@ -71,7 +71,8 @@ class PeriodicosController extends Controller
      */
     public function show($id)
     {
-        //
+        $periodico = Periodico::find($id);
+        return view('periodicos.show')->with('periodico', $periodico);
     }
 
     /**
@@ -82,7 +83,9 @@ class PeriodicosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $periodico = Periodico::find($id);
+        $areas = Area::all();
+        return view('periodicos.edit')->with('periodico', $periodico)->with('areas', $areas);
     }
 
     /**
@@ -94,7 +97,19 @@ class PeriodicosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $periodico = Periodico::find($id);
+
+        $periodico->titulo = $request->input('titulo');
+        $periodico->issn = $request->input('issn');
+        $periodico->area_atuacao = $request->input('area_atuacao');
+        $periodico->fator_impacto = $request->input('fator_impacto');
+        $periodico->qualis = $request->input('qualis');
+        $periodico->descricao = $request->input('descricao');
+
+        $periodico->save();
+
+        return redirect('/periodicos/'.$id);
     }
 
     /**
