@@ -20,6 +20,11 @@
 				</div>
 				<div class="card-action">
 					<a href="{{$publicacao->publicacao()}}" style="color:#1e88e5;text-decoration: none;">Visualizar</a>
+					<form action="/publicacoes/{{ $publicacao->id }}" method="POST">
+						{{ csrf_field() }}
+						<input type="hidden" name="_method" value="DELETE">
+						<input class="btn red" type="submit" name="deletar" value="Deletar">
+					</form>
 				</div>
 			</div>
 		</div>

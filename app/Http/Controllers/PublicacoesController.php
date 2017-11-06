@@ -123,6 +123,11 @@ class PublicacoesController extends Controller
     public function destroy($id)
     {
         $publicacao = Publicacao::find($id);
-        $publicacao->delete();
+
+        if ($publicacao) {
+            $publicacao->delete();
+        }
+
+        return redirect('/publicacoes/');
     }
 }
