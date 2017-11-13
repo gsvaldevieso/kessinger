@@ -32,7 +32,8 @@ class Publicacao extends Model
 			case 'R':
     			return 'Resumo expandido';
     	}
-
+    }
+    
       public static function getUserPublicacoes()
     {
         $periodicos = Periodico::where('user_id', Auth::user()->id);
