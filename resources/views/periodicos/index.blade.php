@@ -21,15 +21,22 @@
 			<div class="row">
 				<a href="/periodicos/{{ $periodico->id }}">Visualizar</a>
 				<a href="/periodicos/periodico/{{$periodico->id}}" style="color:#1e88e5;text-decoration: none;">Publicações</a>
-				<a href="/publicacoes/periodico/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
+				<a id="excluirPeriodico" href="/periodico/exclui/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
-$(document).ready(function(){
-	$('.materialboxed').materialbox();
-});
+	$(document).ready(function(){
+		$('.materialboxed').materialbox();
+	});
+
+    $('#excluirPeriodico').on('click', function () {
+
+        var confirmado = confirm('O periodico será excluido permanentemente. Tem certeza que deseja excluir?');
+
+        if (! confirmado) return false;
+    });
 </script>
 @endforeach
 @stop
