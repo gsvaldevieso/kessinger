@@ -20,7 +20,7 @@ Route::resource('authors', 'AuthorsController');
 Route::resource('perfil', 'PerfilController');
 Route::get('/periodicos/meus', 'PeriodicosController@userPeriodics');
 Route::get('/publicacoes', 'PublicacoesController@index');
-Route::get('/publicacoes/meus', 'PublicacoesController@userPublication');
+Route::get('/publicacoes/meus', 'PublicacoesController@userPublish');
 Route::get('/publicacoes/periodico/{id}', 'PublicacoesController@filtro');
 Route::get('/inativar', 'InactivateUserController@index');
 Route::post('/inativar', 'InactivateUserController@inativar');
