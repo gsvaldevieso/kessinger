@@ -16,7 +16,24 @@ class Publicacao extends Model
 		return Storage::url($this->publicacao);
     }
 
-    public static function getUserPublicacoes()
+    public function periodico()
+    {
+    	$periodico = Periodico::find($this->periodico_id);
+    	return $periodico;
+    }
+
+    public function categoria()
+    {
+    	switch ($this->categoria) {
+    		case 'A':
+    			return 'Artigo científico';
+    		case 'M':
+    			return 'Monografia';
+			case 'R':
+    			return 'Resumo expandido';
+    	}
+
+      public static function getUserPublicacoes()
     {
         $periodicos = Periodico::where('user_id', Auth::user()->id);
         $publicacoes = [];
