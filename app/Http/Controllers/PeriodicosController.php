@@ -120,6 +120,10 @@ class PeriodicosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $periodico = Periodico::find($id);
+
+        $periodico->delete();
+
+        return redirect()->action('PeriodicosController@userPeriodics');
     }
 }

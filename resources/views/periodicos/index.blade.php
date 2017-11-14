@@ -21,7 +21,7 @@
 			<div class="row">
 				<a href="/periodicos/{{ $periodico->id }}">Visualizar</a>
 				<a href="/periodicos/periodico/{{$periodico->id}}" style="color:#1e88e5;text-decoration: none;">Publicações</a>
-				<a href="/publicacoes/periodico/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
+				<a href="/periodicos/excluir/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
 			</div>
 		</div>
 	</div>
