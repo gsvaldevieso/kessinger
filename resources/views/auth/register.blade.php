@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <label for="nacionalidade" class="col-md-4 control-label">Nacionalidade</label>
                             <div class="form-group col s6 center-align">
-                                <select name="nacionalidade" id="nacionalidade" class="validate">
+                                <select onchange="myFunction()" name="nacionalidade" id="nacionalidade" class="validate">
                                     @foreach($paises as $pais)
                                     <option value="{{$pais->name}}">{{$pais->name}}</option>
                                     @endforeach
@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 <label for="cpf" class="col-md-4 control-label">CPF</label>
                                 <div class="col-md-6">
-                                    <input id="cpf" type="text" class="form-control" name="cpf" required>
+                                    <input disabled id="cpf" type="text" class="form-control" name="cpf" required>
                                 </div>
                             </div>
                         </div>
@@ -118,5 +118,24 @@ labelMonthSelect: 'Selecione o Mês',
 labelYearSelect: 'Selecione o ano',
 closeOnSelect: false // Close upon selecting a date,
 });
+</script>
+
+<script>
+
+
+
+function myFunction() {
+   
+    var campoCPF = document.getElementById("cpf");
+    var campoNacionalidade = document.getElementById("nacionalidade");
+    var selecionado = campoNacionalidade.options[campoNacionalidade.selectedIndex].value
+    console.log(selecionado);
+    if (selecionado == "Brazil"){
+            campoCPF.disabled=false;
+        }else{
+            campoCPF.value = "";
+            campoCPF.disabled=true;
+        }
+}
 </script>
 @endsection
