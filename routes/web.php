@@ -26,6 +26,7 @@ Route::get('/publicacoes/periodico/{id}', 'PublicacoesController@filtro');
 Route::get('/inativar', 'InactivateUserController@index');
 Route::post('/inativar', 'InactivateUserController@inativar');
 Route::get('/filtro', 'FiltroController@index')->name('filtro');
+Route::post('/filtro', 'FiltroController@filter')->name('filtro-post');
 Route::resource('publicacoes', 'PublicacoesController');
 Route::resource('periodicos', 'PeriodicosController');
 

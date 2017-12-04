@@ -22,6 +22,18 @@ class Publicacao extends Model
     	return $periodico;
     }
 
+    public static function autores()
+    {
+        $publicacoes = Publicacao::all();
+        $names = [];
+
+        foreach ($publicacoes as $publicacao) {
+            $names[] = $publicacao->autores;
+        }
+
+        return $names;
+    }
+
     public function categoria()
     {
     	switch ($this->categoria) {
@@ -33,7 +45,7 @@ class Publicacao extends Model
     			return 'Resumo expandido';
     	}
     }
-    
+
       public static function getUserPublicacoes()
     {
         $periodicos = Periodico::where('user_id', Auth::user()->id);
