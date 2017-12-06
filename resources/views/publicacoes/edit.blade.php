@@ -41,64 +41,55 @@
     <div class="row">
         <div class="panel panel-info">
             <div style="background-color:white;" class="panel-heading">
-                <h3 class="panel-title">Criar nova publicação</h3>
+                <h3 class="panel-title">Editar publicação</h3>
             </div>
             <div class="panel-body">
-                <form id="form-publicacao" method="POST" action="/publicacoes" enctype="multipart/form-data" class="col s12">
+                <form id="form-publicacao" method="POST" action="/publicacoes/{{$publicacao->id}}" enctype="multipart/form-data" class="col s12">
                     {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="PUT">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Digite o nome do(s) autor(es)" name="autores" id="autores" type="text" class="validate">
+                            <input placeholder="Digite o nome do(s) autor(es)" name="autores" id="autores" type="text" class="validate" value="{{ $publicacao->autores }}" >
                             <label for="autores">Autor(es)</label>
                         </div>
                         <div class="input-field col s6">
-                            <input placeholder="Digite o título" name="titulo" id="titulo" type="text" class="validate">
+                            <input placeholder="Digite o título" name="titulo" id="titulo" type="text" class="validate" value="{{ $publicacao->titulo }}" >
                             <label for="titulo">Título</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="ano" type="text" class="form-control datepicker" name="ano" required>
+                            <input id="ano" type="text" class="form-control datepicker" name="ano" required value="{{ $publicacao->ano }}">
                             <label for="ano">Ano da publicação</label>
                         </div>
                         <div class="input-field col s6">
-                            <input name="area_atuacao" id="area_atuacao" type="text" class="validate">
+                            <input name="area_atuacao" id="area_atuacao" type="text" class="validate" value="{{ $publicacao->area_atuacao }}" >
                             <label for="area_atuacao">Área de atuação</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <select id="categoria" name="categoria">
-                                <option value="Artigo Científico">Artigo científico</option>
-                                <option value="Monografia">Monografia</option>
-                                <option value="Resumo expandido">Resumo expandido</option>
+                                <option value="{{ $publicacao->categoria }}" selected>{{ $publicacao->categoria() }}</option>
+                                <option value="A">Artigo científico</option>
+                                <option value="M">Monografia</option>
+                                <option value="R">Resumo expandido</option>
                             </select>
                             <label for="categoria">Categoria</label>
                         </div>
                         <div class="input-field col s6">
                             <select name="periodico" id="periodico">
+                                <option value="{{ $publicacao->periodico_id }}" selected>{{ $publicacao->periodico()->titulo }}</option>
                                 @foreach($periodicos as $periodico)
-                                <option value="{{$periodico->id}}">{{$periodico->titulo}}</option>
+                                    <option value="{{$periodico->id}}">{{$periodico->titulo}}</option>
                                 @endforeach
                             </select>
                             <label>Periódico</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Publicação</span>
-                                <input name="publicacao" type="file" multiple>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input id="imagem" class="file-path validate" type="text" placeholder="Selecione uma imagem que descreva o periódico...">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <button id="submeter" class="btn waves-effect waves-light" type="submit" name="action">Enviar
-                          <i class="material-icons right">send</i>
-                        </button>
+                        <input class="btn green" type="submit" name="editar" value="Editar">
+                        <a href="#" class="btn red">Cancelar</a>
                     </div>
                 </form>
                 

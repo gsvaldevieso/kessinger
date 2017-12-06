@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
+use App\ModelFactory;
+use App\Paises;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,6 +40,15 @@ class RegisterController extends Controller {
 	public function __construct() {
 		$this->middleware('guest');
 	}
+
+
+	public function showRegistrationForm()
+	{
+    $paises = Paises::all();
+
+    return view('auth.register')->with('paises', $paises);
+	}
+
 
 	/**
 	 * Get a validator for an incoming registration request.
