@@ -80,7 +80,7 @@ class RegisterController extends Controller {
 		$novoPerfil                    = new Profile();
 		$novoPerfil->{'user_id'}       = $novoUsuario->id;
 		$novoPerfil->{'full_name'}     = $novoUsuario->name;
-		$novoPerfil->{'cpf'}           = $data['cpf'];
+		$novoPerfil->{'cpf'}           = array_key_exists('cpf', $data) ? $data['cpf'] : null;
 		$novoPerfil->{'birthDate'}     = $data['data_nascimento'];
 		$novoPerfil->{'nacionalidade'} = $data['nacionalidade'];
 		$novoPerfil->save();
