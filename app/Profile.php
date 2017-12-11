@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    //
+    static function validarCep($cep) {
+	    // retira espacos em branco
+	    $cep = trim($cep);
+	    
+	    // expressao regular para avaliar o cep
+	    $avaliaCep = preg_match("/[0-9]{5}-[0-9]{3}/", $cep);
+	    
+	    // verifica o resultado
+	    return (bool)$avaliaCep;
+	}
 }
