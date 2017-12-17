@@ -4,7 +4,7 @@
 <div class="col-md-3">
 	<div class="card">
 		<div class="card-image waves-effect waves-block waves-light">
-			<img width="200" height="150" class="activator materialboxed" src="data:image/png;base64, {{$periodico->imagem}}">
+			<img style="max-width: 200px; max-height: 400px;" class="activator materialboxed img-responsive" src="data:image/png;base64, {{$periodico->imagem}}">
 		</div>
 		<div class="card-content" style="height:200px;">
 			<p style="font-weight: bold;text-align:center">{{ $periodico->titulo }}</p>
@@ -21,7 +21,7 @@
 			<div class="row">
 				<a href="/periodicos/{{ $periodico->id }}">Visualizar</a>
 				<a href="/periodicos/periodico/{{$periodico->id}}" style="color:#1e88e5;text-decoration: none;">Publicações</a>
-				<a href="/publicacoes/periodico/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
+				<a href="/periodicos/excluir/{{$periodico->id}}" style="color:#F40000;text-decoration: none;">Deletar</a>
 			</div>
 		</div>
 	</div>

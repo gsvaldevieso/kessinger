@@ -12,6 +12,8 @@
 
 	<div class="row">
 		<form action="/publicacoes" method="GET">
+
+
 			<div class="col-md-12 text-center">
 				<div class="text-center bg-info transparent">
 					<img class="animated infinite pulse img-responsive" src="{{ asset('img/prototipo4.png') }}" height="133" width="580"/>
@@ -27,7 +29,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<a style="margin-left:25%;width:100%;cursor:pointer;" href="#" onclick="javascript:alert('Funcionalidade em construção...');">Não encontrou o que procurava? Clique aqui e faça uma busca mais avançada...</a>
+				<a style="margin-left:25%;width:100%;cursor:pointer;" href="/filtro/">Não encontrou o que procurava? Clique aqui e faça uma busca mais avançada...</a>
 			</div>
 		</div>
 		<div class="row">

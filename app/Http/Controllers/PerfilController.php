@@ -81,6 +81,7 @@ class PerfilController extends Controller {
 		$perfil->grade              = $request->input('grade');
 		$perfil->area               = $request->input('area');
 		$perfil->nacionalidade      = $request->input('nacionalidade');
+		$perfil->public             = $request->input('publico') === 'on';
 
 		/* Se o usuário enviou uma nova imagem de perfil então salva e atualiza no banco */
 		if ($request->hasFile('picture') && $request->file('picture')->isValid()) {

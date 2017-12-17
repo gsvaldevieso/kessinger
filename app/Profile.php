@@ -19,8 +19,19 @@ class Profile extends Model
 
 	public static function validateName($name){
     	$name = trim($name);
-    	$regex  = "/^[A-Za-zÃ¡Ã Ã¢Ã£Ã©Ã¨ÃªÃ­Ã¯Ã³Ã´ÃµÃ¶ÃºÃ§Ã±ÃÃ€Ã‚ÃƒÃ‰ÃˆÃÃÃ“Ã”Ã•Ã–ÃšÃ‡Ã‘ ]+$/";
+    	$regex  = "/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/";
     	
     	return (bool)(preg_match($regex, $name));
 	}
+	static function validaEmail($email){
+	if (empty($email)) {
+		return false;
+	}
+    $er = "/^(([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}){0,1}$/";
+    if (preg_match($er, $email)){
+	return true;
+    } else {
+	return false;
+    }
+}
 }
