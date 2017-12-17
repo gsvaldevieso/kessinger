@@ -12,13 +12,13 @@
 }
 
 .card-img-top{
-	margin: 10px!important;	
+    margin: 10px!important;
 }
 
 .bordered-card{
-	padding:5px;
-	border:1px solid;
-	background-color:white;
+    padding:5px;
+    border:1px solid;
+    background-color:white;
 }
 
 .trucate{

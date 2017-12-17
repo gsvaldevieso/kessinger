@@ -9,20 +9,20 @@ use App\ModelFactory;
 
 class PublicacoesController extends Controller
 {
-	/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
     */
     public function index(Request $request){
-		$valorPesquisado = $request->input('pesquisar');
-		
-		if($valorPesquisado !== '')
-    		$publicacoes = Publicacao::where('titulo', 'LIKE', "%$valorPesquisado%")->get();
-		else
-			$publicacoes = Publicacao::all();
+        $valorPesquisado = $request->input('pesquisar');
 
-    	return view('publicacoes.index')->with('publicacoes', $publicacoes);
+        if($valorPesquisado !== '')
+            $publicacoes = Publicacao::where('titulo', 'LIKE', "%$valorPesquisado%")->get();
+        else
+            $publicacoes = Publicacao::all();
+
+        return view('publicacoes.index')->with('publicacoes', $publicacoes);
     }
 
     /**
@@ -32,13 +32,13 @@ class PublicacoesController extends Controller
      */
     public function create()
     {
-		$periodicos = Periodico::all();
+        $periodicos = Periodico::all();
         return view('publicacoes.create')->with('periodicos', $periodicos);
     }
 
     public function filtro($id)
     {
-	$publicacoes = Publicacao::where('periodico_id', $id)->get();
+    $publicacoes = Publicacao::where('periodico_id', $id)->get();
         return view('publicacoes.index')->with('publicacoes', $publicacoes);
     }
 
@@ -50,10 +50,10 @@ class PublicacoesController extends Controller
      */
     public function store(Request $request)
     {
-		$factory = new ModelFactory();
+        $factory = new ModelFactory();
 
         $publicacao = $factory->get('Publicacao');
-		$publicacao->titulo = $request->input('titulo');
+        $publicacao->titulo = $request->input('titulo');
         $publicacao->autores = $request->input('autores');
         $publicacao->ano = $request->input('ano');
         $publicacao->periodico_id = $request->input('periodico');
@@ -68,9 +68,9 @@ class PublicacoesController extends Controller
             $publicacao->publicacao = $path;
         }
 
-		$publicacao->save();
+        $publicacao->save();
 
-		return view('publicacoes.stored');
+        return view('publicacoes.stored');
     }
 
     /**

@@ -1,7 +1,7 @@
 define( [
-	"./arr"
+    "./arr"
 ], function( arr ) {
-	"use strict";
+    "use strict";
 
-	return arr.indexOf;
+    return arr.indexOf;
 } );

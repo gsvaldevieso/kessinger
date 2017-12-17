@@ -14,7 +14,7 @@ class PerfilController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$usuarioAtual = Profile::where('user_id', Auth::user()->id);
+		$usuarioAtual  = Profile::where('user_id', Auth::user()->id);
 		$outrosAutores = User::all();
 
 		if ($usuarioAtual) {
@@ -22,7 +22,7 @@ class PerfilController extends Controller {
 		}
 
 		return view('perfil.index')->with('perfil', $usuarioAtual)
-			->with('autores', $outrosAutores);
+		                           ->with('autores', $outrosAutores);
 	}
 
 	/**

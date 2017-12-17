@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 		return view('inicio.index');
-})->middleware(\App\Http\Middleware\CheckAuthMiddleware::class);
+	})->middleware(\App\Http\Middleware\CheckAuthMiddleware::class );
 
 Auth::routes();
 Route::resource('authors', 'AuthorsController');
@@ -27,4 +27,3 @@ Route::post('/inativar', 'InactivateUserController@inativar');
 Route::get('/filtro', 'FiltroController@index')->name('filtro');
 Route::resource('publicacoes', 'PublicacoesController');
 Route::resource('periodicos', 'PeriodicosController');
-

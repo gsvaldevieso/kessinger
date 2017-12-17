@@ -4,32 +4,32 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-    	    <select>
-		      <option value="" disabled selected>Selecione uma opção</option>
-		      <option value="1"></option>
-		      <option value="2"></option>
-		      <option value="3"></option>
-		    </select>
-		    <label>Autor</label>
+            <select>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+            </select>
+            <label>Autor</label>
         </div>
         <div class="input-field col s6">
-    	    <select>
-		      <option value="" disabled selected>Selecione uma opção</option>
-		      <option value="1"></option>
-		      <option value="2"></option>
-		      <option value="3"></option>
-		    </select>
-		    <label>Qualis</label>
+            <select>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+            </select>
+            <label>Qualis</label>
         </div>
       </div>
         <div class="input-field col s6">
-    	    <select>
-		      <option value="" disabled selected>Selecione uma opção</option>
-		      <option value="1"></option>
-		      <option value="2"></option>
-		      <option value="3"></option>
-		    </select>
-		    <label>Área</label>
+            <select>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+            </select>
+            <label>Área</label>
         </div>
       </div>
       <div class="row">
@@ -59,10 +59,10 @@
     </form>
   </div>
   <script type="text/javascript">
-  	
+
   $(document).ready(function() {
     $('select').material_select();
   });
-     
+
   </script>
- @stop 
+ @stop

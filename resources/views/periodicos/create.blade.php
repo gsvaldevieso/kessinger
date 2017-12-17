@@ -222,7 +222,7 @@
   var campoImagem = document.querySelector("#imagem");
   var botao = document.querySelector("#submeter");
   var form = document.querySelector("#form-periodico");
-  
+
   botao.addEventListener('click', function(event){
     event.preventDefault();
     if (campoIssn.value.length != 9 || campoTitulo.value == "" || campoDescricao.value == "" || campoImagem.value == "") {

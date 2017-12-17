@@ -1,6 +1,6 @@
 define( function() {
-	"use strict";
+    "use strict";
 
-	// [[Class]] -> type pairs
-	return {};
+    // [[Class]] -> type pairs
+    return {};
 } );

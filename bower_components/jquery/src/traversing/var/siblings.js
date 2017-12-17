@@ -3,15 +3,15 @@ define( function() {
 "use strict";
 
 return function( n, elem ) {
-	var matched = [];
+    var matched = [];
 
-	for ( ; n; n = n.nextSibling ) {
-		if ( n.nodeType === 1 && n !== elem ) {
-			matched.push( n );
-		}
-	}
+    for ( ; n; n = n.nextSibling ) {
+        if ( n.nodeType === 1 && n !== elem ) {
+            matched.push( n );
+        }
+    }
 
-	return matched;
+    return matched;
 };
 
 } );
