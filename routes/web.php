@@ -21,10 +21,12 @@ Route::resource('perfil', 'PerfilController');
 Route::get('/periodicos/meus', 'PeriodicosController@userPeriodics');
 Route::get('/periodicos/excluir/{id}', 'PeriodicosController@destroy');
 Route::get('/publicacoes', 'PublicacoesController@index');
+Route::get('/publicacoes/meus', 'PublicacoesController@userPublish');
 Route::get('/publicacoes/periodico/{id}', 'PublicacoesController@filtro');
 Route::get('/inativar', 'InactivateUserController@index');
 Route::post('/inativar', 'InactivateUserController@inativar');
 Route::get('/filtro', 'FiltroController@index')->name('filtro');
+Route::post('/filtro', 'FiltroController@filter')->name('filtro-post');
 Route::resource('publicacoes', 'PublicacoesController');
 Route::resource('periodicos', 'PeriodicosController');
 

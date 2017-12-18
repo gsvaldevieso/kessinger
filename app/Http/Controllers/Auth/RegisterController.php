@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
+use App\ModelFactory;
+use App\Paises;
+
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 
@@ -38,6 +41,15 @@ class RegisterController extends Controller {
 		$this->middleware('guest');
 	}
 
+
+	public function showRegistrationForm()
+	{
+    $paises = Paises::all();
+
+    return view('auth.register')->with('paises', $paises);
+	}
+
+
 	/**
 	 * Get a validator for an incoming registration request.
 	 *
@@ -68,7 +80,7 @@ class RegisterController extends Controller {
 		$novoPerfil                    = new Profile();
 		$novoPerfil->{'user_id'}       = $novoUsuario->id;
 		$novoPerfil->{'full_name'}     = $novoUsuario->name;
-		$novoPerfil->{'cpf'}           = $data['cpf'];
+		$novoPerfil->{'cpf'}           = array_key_exists('cpf', $data) ? $data['cpf'] : null;
 		$novoPerfil->{'birthDate'}     = $data['data_nascimento'];
 		$novoPerfil->{'nacionalidade'} = $data['nacionalidade'];
 		$novoPerfil->save();

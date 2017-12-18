@@ -18,8 +18,8 @@
     <script
     src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/picker.date.js') }}"></script>
-    <script src="{{ asset('js/pt_BR.js') }}"></script>
+    <!-- <script src="{{ asset('js/picker.date.js') }}"></script> -->
+    <!-- <script src="{{ asset('js/pt_BR.js') }}"></script> -->
     <script src="{{ asset('js/materialize.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     <link rel="stylesheet"
@@ -87,6 +87,9 @@
                                 <li>
                                     <a href="{{ action('PublicacoesController@index') }}">
                                         Visualizar todas
+                                    </a>
+                                    <a href="{{ action('PublicacoesController@userPublish') }}">
+                                        Visualizar meus
                                     </a>
                                     <a href="{{ action('PublicacoesController@create') }}">
                                         Realizar publicação

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Publicacao;
 use App\Periodico;
 use App\ModelFactory;
+use Auth;
 
 class PublicacoesController extends Controller
 {
@@ -23,6 +24,12 @@ class PublicacoesController extends Controller
 			$publicacoes = Publicacao::all();
 
     	return view('publicacoes.index')->with('publicacoes', $publicacoes);
+    }
+
+    public function userPublish()
+    {
+        $publicacoes = Publicacao::where('user_id', Auth::user()->id)->get();
+        return view('publicacoes.index')->with('publicacoes', $publicacoes);
     }
 
     /**
@@ -59,6 +66,7 @@ class PublicacoesController extends Controller
         $publicacao->periodico_id = $request->input('periodico');
         $publicacao->area_atuacao = $request->input('area_atuacao');
         $publicacao->categoria = $request->input('categoria');
+        $publicacao->user_id = Auth::user()->id;
 
         if ($request->hasFile('publicacao') && $request->file('publicacao')->isValid()) {
 
@@ -81,7 +89,8 @@ class PublicacoesController extends Controller
      */
     public function show($id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+        return view('publicacoes.show')->with('publicacao', $publicacao);
     }
 
     /**
@@ -92,7 +101,9 @@ class PublicacoesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+        $periodicos = Periodico::all();
+        return view('publicacoes.edit')->with('publicacao', $publicacao)->with('periodicos', $periodicos);
     }
 
     /**
@@ -104,7 +115,19 @@ class PublicacoesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+
+        $publicacao->titulo = $request->input('titulo');
+        $publicacao->autores = $request->input('autores');
+        $publicacao->ano = $request->input('ano');
+        $publicacao->periodico_id = $request->input('periodico');
+        $publicacao->area_atuacao = $request->input('area_atuacao');
+        $publicacao->categoria = $request->input('categoria');
+        $publicacao->user_id = Auth::user()->id;
+
+        $publicacao->save();
+
+        return view('publicacoes.stored');
     }
 
     /**
@@ -115,6 +138,12 @@ class PublicacoesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $publicacao = Publicacao::find($id);
+
+        if ($publicacao) {
+            $publicacao->delete();
+        }
+
+        return redirect('/publicacoes/');
     }
 }

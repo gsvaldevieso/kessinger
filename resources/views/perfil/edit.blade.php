@@ -69,6 +69,19 @@
 												<td>Nacionalidade:</td>
 												<td><input class="form-control" value="{{ $perfil->nacionalidade }}" type="text" name="nacionalidade"></td>
 											</tr>
+											<tr>
+                                                <td>Privacidade do perfil</td>
+                                                <td>
+                                                    <div class="switch">
+                                                    <label>
+                                                      Privado
+                                                      <input type="checkbox" id="publico" name="publico" {{ $perfil->public ? 'checked' : ''}}>
+                                                      <span class="lever"></span>
+                                                      Público
+                                                    </label>
+                                                  </div>
+                                                </td>
+                                            </tr>
 										</tbody>
 									</table>
 								</div>
