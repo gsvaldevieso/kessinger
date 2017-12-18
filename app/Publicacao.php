@@ -59,4 +59,11 @@ class Publicacao extends Model
 
         return $publicacoes;
     }
+
+    public static function validateName($name){
+    	$name = trim($name);
+    	$regex  = "/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/";
+    	
+    	return (preg_match($regex, $name));
+	}
 }

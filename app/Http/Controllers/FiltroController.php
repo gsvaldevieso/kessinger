@@ -20,14 +20,29 @@ class FiltroController extends Controller
 		return view('filtro.index')->with('periodicos', $periodicos)->with('autores', $autores)->with('areas', $areas)->with('publicacoesCategoria', $publicacoesCategoria);
 	}
 
-	public function filter(Request $request){
-		$publicacoesCategoria = Publicacao::all()->pluck('categoria')->toArray();
-		$periodicos           = Periodico::all()->pluck('titulo')->toArray();	
-		$autores              = Publicacao::autores();
-		$areas                = Area::all()->pluck('description')->toArray();
+	public function filter(Request $request) 
+	{
+		$autores = $request->input('autores');
+		$area_atuacao = $request->input('area_atuacao');
+		$qualis = $request->input('qualis');
+		$fator = $request->input('fator');
+		$periodico = $request->input('periodico');
+		$categoria = $request->input('categoria');
+		$data_inicio = $request->input('data_inicio');
+		$data_fim = $request->input('data_fim');
 
-		$result = FiltroService::filterResult($request);
+    	$publicacoes = Publicacao::where('autores', 'LIKE', '%'.$autores.'%')
+    		->where('categoria', 'LIKE', '%'.$categoria.'%')
+    		->where('area_atuacao', 'LIKE', '%'.$area_atuacao.'%')
+    		->get();
 
-		return view('filtro.index')->with('periodicos', $periodicos)->with('autores', $autores)->with('areas', $areas)->with('publicacoesCategoria', $publicacoesCategoria);
+    	$periodicos =  Periodico::where('autores', 'LIKE', '%'.$autores.'%')
+    		->where('titulo', 'LIKE', '%'.$periodico.'%')
+			->where('fator_impacto', 'LIKE', '%'.$fator.'%')
+			->where('qualis', 'LIKE', '%'.$qualis.'%')
+    		->get();
+
+    	return view('publicacoes.avancado')->with('publicacoes', $publicacoes)
+    		->with('periodicos', $periodicos);
 	}
 }

@@ -10,43 +10,44 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="input-field col s6">
-                            <div name="autores" class="autores-chips chips"></div>
+                        <div class="col s6">
+                            <input type="text" name="autores">
                             <label>Autores</label>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="area-atuacao"></div>
+                        <div class="col s4">
+                            <input type="text" name="area_atuacao">
                             <label>Área de atuação</label>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="qualis-chips chips"></div>
+                        <div class="col s4">
+                            <input type="text" name="qualis">
                             <label>Qualis</label>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="fator-impacto-chips chips"></div>
+                        <div class="col s4">
+                            <input type="text" name="fator">
                             <label>Fator de impacto</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="col s3">
                             <input type="number" name="ano">
                             <label>Ano</label>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="periodico-chips chips"></div>
+                        <div class="col s6">
+                            <input type="text" name="periodico">
                             <label>Periódico</label>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="categoria-chips chips"></div>
+                        <div class="col s5">
+                            <input type="text" name="categoria">
                             <label>Categoria</label>
                         </div>
-                        <div class="input-field col s2">
+                        <div class="col s2">
                             <input type="number" name="data_inicio">
                             <label>Início</label>
                         </div>
-                        <div class="input-field col s2">
+                        <div class="col s2">
                             <input type="number" name="data_fim">
                             <label>Fim</label>
                         </div>
-                        <div class="input-field col s12">
+                        <div class="col s12">
+                            <br>
                             <input class="btn green" type="submit" name="enviar" value="Filtrar">
                         </div>
                     </div>
