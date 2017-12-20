@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<h4>Analisar publições</h4>
+		<h4>Analisar publicações</h4>
 	</div>
 	<div class="row">
 		@foreach($publicacoes as $publicacao)
