@@ -19,17 +19,45 @@ class PublicacoesController extends Controller
 		$valorPesquisado = $request->input('pesquisar');
 		
 		if($valorPesquisado !== '')
-    		$publicacoes = Publicacao::where('titulo', 'LIKE', "%$valorPesquisado%")->get();
+    		$publicacoes = Publicacao::where('titulo', 'LIKE', "%$valorPesquisado%")
+                ->where('approved', true)->get();
 		else
-			$publicacoes = Publicacao::all();
+			$publicacoes = Publicacao::where('approved', true)->get();
 
     	return view('publicacoes.index')->with('publicacoes', $publicacoes);
     }
 
     public function userPublish()
     {
-        $publicacoes = Publicacao::where('user_id', Auth::user()->id)->get();
+        $publicacoes = Publicacao::where('user_id', Auth::user()->id)
+            ->get();
         return view('publicacoes.index')->with('publicacoes', $publicacoes);
+    }
+
+    public function analisar()
+    {
+        $publicacoes = Publicacao::where('approved', null)->get();
+        return view('publicacoes.aprovar')->with('publicacoes', $publicacoes);     
+    }
+
+    public function aprovar($id)
+    {
+        $publicacao = Publicacao::find($id);
+        $publicacao->approved = true;
+        $publicacao->save();
+
+        $publicacoes = Publicacao::where('approved', null)->get();
+        return view('publicacoes.aprovar')->with('publicacoes', $publicacoes);     
+    }
+
+    public function rejeitar($id)
+    {
+        $publicacao = Publicacao::find($id);
+        $publicacao->approved = false;
+        $publicacao->save();
+
+        $publicacoes = Publicacao::where('approved', null)->get();
+        return view('publicacoes.aprovar')->with('publicacoes', $publicacoes);  
     }
 
     /**
