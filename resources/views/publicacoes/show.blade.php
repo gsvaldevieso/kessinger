@@ -46,16 +46,23 @@
                             <label>Periódico</label>
                         </div>
                     </div>
+                </form>
                     <div class="row">
                         @if($publicacao->user_id == Auth::user()->id)
-                        <div class="input-field col s12">
+                        <div class="input-field col s2">
                             <a href="/publicacoes/{{$publicacao->id}}/edit" class="btn blue">Editar</a>
-                            <a href="#" class="btn red">Excluir</a>
                         </div>
+                        <div class="input-field col s2">
+                            <form action="/publicacoes/{{ $publicacao->id }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input class="btn red" type="submit" name="deletar" value="Excluir">
+                            </form>
+                        </div>
+
                         @endif
                     </div>
                     </div>
-                </form>
             </div>
         </div>
 	</div>

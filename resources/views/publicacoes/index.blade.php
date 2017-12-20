@@ -19,12 +19,17 @@
 					</p>
 				</div>
 				<div class="card-action">
-					<a href="/publicacoes/{{ $publicacao->id }}">Visualizar</a>
+					<div class="center-align">
+						<a class="waves-effect waves-light btn" href="/publicacoes/{{ $publicacao->id }}">Visualizar</a>
+					</div>
+					<div class="center-align">
+						<br>
 					<form action="/publicacoes/{{ $publicacao->id }}" method="POST">
 						{{ csrf_field() }}
 						<input type="hidden" name="_method" value="DELETE">
 						<input class="btn red" type="submit" name="deletar" value="Deletar">
 					</form>
+				</div>
 				</div>
 			</div>
 		</div>
